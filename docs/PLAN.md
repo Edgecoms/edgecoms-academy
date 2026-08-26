@@ -1,6 +1,19 @@
 # Edgecoms Academy: Implementation Plan
 
-Status: proposal, awaiting approval. No application code written yet.
+Status: approved and in progress.
+
+| Phase | State |
+| --- | --- |
+| 0. Cleanup and foundation | done |
+| 1. Content layer | done |
+| 2. Database and access | done in code; Neon and Resend domain still to provision |
+| 3. Public surface | done |
+| 4. Lesson experience | not started |
+| 5. Progress | not started |
+| 6. Polish and ship | not started |
+
+Two external items block nothing locally but must be done before deploy: a Neon
+project with a pooled connection string, and a Resend-verified sending domain.
 
 ---
 
@@ -201,7 +214,7 @@ Assumption to confirm (see section P): this application is deployed on its own a
 
 | Route | Access | Rendering | Indexed |
 | --- | --- | --- | --- |
-| `/` | public | static | yes, canonical to `edgecoms.com/academy` |
+| `/` | public | redirect to `/academy` | n/a |
 | `/academy` | public | static | yes |
 | `/academy/courses/[courseSlug]` | public | static, `generateStaticParams` | yes |
 | `/academy/courses/[courseSlug]/[lessonSlug]` | session | dynamic | no |
@@ -214,6 +227,7 @@ Assumption to confirm (see section P): this application is deployed on its own a
 Deviations from your draft, with reasons:
 
 - **`/lessons/` segment dropped.** `/academy/courses/shopify-ecommerce/product-research` reads better than `.../lessons/product-research`, is shorter to share, and matches the documentation-site feel you asked for. Nothing else can occupy that segment because course slugs are enumerable at build time.
+- **`/` redirects rather than being a second marketing page.** An earlier draft had a marketing homepage at `/` and an Academy landing at `/academy`, which is two pages carrying one message. Under the rewrite assumption `/` in this deployment has no production role at all, since `edgecoms.com/` is the agency site. It redirects, and `/academy` is the single landing page.
 - **`/academy` is the public landing, not a conditional dashboard.** Rendering two different pages at one URL forces the whole route dynamic and kills its static prerender, which is the page most likely to be shared. The dashboard gets its own URL and the header CTA switches between "Start learning" and "Continue" based on session.
 - **One `/academy/access` route, no `/login`, `/signup`, `/forgot-password` or `/reset-password`.** With emailed codes there are no passwords to reset and no separate signup, so four routes collapse into one. See section F.
 - **`/academy/dashboard` root redirect.** After login, land on `/academy/dashboard`. If the user has progress, the dashboard's primary action deep links straight to their resume lesson.
