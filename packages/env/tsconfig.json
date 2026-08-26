@@ -1,0 +1,6 @@
+{
+  "extends": "@edgecoms-academy/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}
