@@ -45,6 +45,10 @@
     },
     "db:down": {
       "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": []
     }
   }
 }

@@ -1,40 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 
-import "../index.css";
-import Header from "@/components/header";
 import Providers from "@/components/providers";
+import "../index.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+	display: "swap",
+	subsets: ["latin"],
+	variable: "--font-inter",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	display: "swap",
+	subsets: ["latin"],
+	variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: "edgecoms-academy",
-  description: "edgecoms-academy",
+	description:
+		"Free, practical ecommerce education. Build your Shopify business from zero.",
+	title: {
+		default: "Edgecoms Academy",
+		template: "%s | Edgecoms Academy",
+	},
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>
-          <div className="grid grid-rows-[auto_1fr] h-svh">
-            <Header />
-            {children}
-          </div>
-        </Providers>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en" suppressHydrationWarning>
+			<body className={`${inter.variable} ${geistMono.variable}`}>
+				<Providers>{children}</Providers>
+			</body>
+		</html>
+	);
 }

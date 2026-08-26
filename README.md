@@ -1,48 +1,66 @@
-# edgecoms-academy
+# Edgecoms Academy
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Self, TRPC, and more.
+Free, practical ecommerce education. Build your Shopify business from zero.
 
-## Features
+The implementation plan lives in [docs/PLAN.md](docs/PLAN.md). Read it before adding features.
 
-- **TypeScript** - For type safety and improved developer experience
-- **Next.js** - Full-stack React framework
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **Shared UI package** - shadcn/ui primitives live in `packages/ui`
-- **tRPC** - End-to-end type-safe APIs
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Biome** - Linting and formatting
-- **Turborepo** - Optimized monorepo build system
+## Stack
 
-## Getting Started
+- **Next.js 16** App Router, React 19, React Compiler
+- **TypeScript** across every package
+- **Tailwind CSS v4** with tokens in `packages/ui/src/styles/globals.css`
+- **shadcn/ui** primitives on Base UI, shared through `packages/ui`
+- **Drizzle ORM** on **PostgreSQL** (Neon in production)
+- **Better Auth** with emailed access codes, no passwords
+- **Biome / Ultracite** for linting and formatting
+- **Turborepo** with Bun workspaces
 
-First, install the dependencies:
+Data is read in Server Components and written through Server Actions. There is no
+client data-fetching layer.
+
+## Local setup
+
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-## Database Setup
+Copy `apps/web/.env.example` to `apps/web/.env` and fill in `BETTER_AUTH_SECRET`.
 
-This project uses PostgreSQL with Drizzle ORM.
-
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/web/.env` file with your PostgreSQL connection details.
-
-3. Apply the schema to your database:
+Start Postgres and the local mail catcher:
 
 ```bash
-bun run db:push
+bun run db:start
 ```
 
-Then, run the development server:
+Apply migrations, then run the app:
+
+```bash
+bun run db:migrate
+```
 
 ```bash
 bun run dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the fullstack application.
+- App: [http://localhost:3001](http://localhost:3001)
+- Inbox: [http://localhost:8025](http://localhost:8025)
+
+## Access codes and email
+
+There are no passwords. A student enters a name and email, we email a six digit
+code, and verifying it both creates the account and signs them in.
+
+Delivery has two transports, picked by `EMAIL_TRANSPORT`:
+
+- `smtp` sends to the Mailpit container. Every code lands at
+  [http://localhost:8025](http://localhost:8025), nothing leaves the machine.
+- `resend` sends for real and needs `RESEND_API_KEY` plus an `EMAIL_FROM` on a
+  domain verified in Resend.
+
+Unset, it defaults to `smtp` outside production and `resend` in production, so
+local development needs no email configuration.
 
 ## UI Customization
 
@@ -57,7 +75,7 @@ React web apps in this stack share shadcn/ui primitives through `packages/ui`.
 Run this from the project root to add more primitives to the shared UI package:
 
 ```bash
-npx shadcn@latest add accordion dialog popover sheet table -c packages/ui
+bunx shadcn@latest add dialog popover table -c packages/ui
 ```
 
 Import shared components like this:
@@ -74,7 +92,7 @@ If you want to add app-specific blocks instead of shared primitives, run the sha
 
 ### Vercel Services
 
-- Target: web + server
+- Target: web
 - Config: `vercel.json`
 - Link the project first: bun run deploy:setup
 - Local Vercel dev: bun run dev:vercel
@@ -97,12 +115,13 @@ For more details, see the guide on [Deploying to Vercel](https://www.better-t-st
 ```
 edgecoms-academy/
 ├── apps/
-│   └── web/         # Fullstack application (Next.js)
+│   └── web/         # Next.js application
 ├── packages/
-│   ├── ui/          # Shared shadcn/ui components and styles
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
+│   ├── ui/          # Shared shadcn/ui components, design tokens
+│   ├── auth/        # Better Auth config, email transport, templates
+│   ├── db/          # Drizzle schema, migrations, connection
+│   ├── env/         # Validated environment variables
+│   └── config/      # Shared tsconfig
 ```
 
 ## Available Scripts
@@ -111,11 +130,13 @@ edgecoms-academy/
 - `bun run build`: Build all applications
 - `bun run dev:web`: Start only the web application
 - `bun run check-types`: Check TypeScript types across all apps
-- `bun run db:push`: Push schema changes to database
-- `bun run db:generate`: Generate database client/types
-- `bun run db:migrate`: Run database migrations
+- `bun run db:start`: Start Postgres and Mailpit
+- `bun run db:stop`: Stop them
+- `bun run db:generate`: Generate a migration from schema changes
+- `bun run db:migrate`: Apply pending migrations
 - `bun run db:studio`: Open database studio UI
 - `bun run check`: Run Biome formatting and linting
+- `bun run fix`: Apply Biome autofixes
 - `bun run deploy:setup`: Link this repo to a Vercel project (first-time setup)
 - `bun run dev:vercel`: Run the Vercel Services dev environment locally
 - `bun run env:preview`: Sync local env files to the Vercel preview environment

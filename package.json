@@ -30,6 +30,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
+    "test": "turbo run test",
     "check-types": "turbo run check-types",
     "dev:web": "turbo run dev -F web --",
     "db:push": "turbo run db:push -F @edgecoms-academy/db --",

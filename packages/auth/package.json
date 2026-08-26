@@ -15,10 +15,12 @@
     "@edgecoms-academy/env": "workspace:*",
     "better-auth": "catalog:",
     "dotenv": "catalog:",
+    "nodemailer": "^7.0.9",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@edgecoms-academy/config": "workspace:*",
+    "@types/nodemailer": "^7.0.4",
     "typescript": "catalog:"
   }
 }

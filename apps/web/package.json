@@ -6,19 +6,15 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "check-types": "tsc --noEmit",
-    "start": "next start"
+    "start": "next start",
+    "test": "bun run src/content/registry.check.ts"
   },
   "dependencies": {
-    "@edgecoms-academy/api": "workspace:*",
     "@edgecoms-academy/auth": "workspace:*",
+    "@edgecoms-academy/db": "workspace:*",
     "@edgecoms-academy/env": "workspace:*",
     "@edgecoms-academy/ui": "workspace:*",
     "@swc/helpers": "^0.5.23",
-    "@tanstack/react-form": "^1.33.2",
-    "@tanstack/react-query": "^5.101.4",
-    "@trpc/client": "catalog:",
-    "@trpc/server": "catalog:",
-    "@trpc/tanstack-react-query": "^11.18.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "better-auth": "catalog:",
     "dotenv": "catalog:",
@@ -33,7 +29,6 @@
   "devDependencies": {
     "@edgecoms-academy/config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
-    "@tanstack/react-query-devtools": "^5.101.4",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
