@@ -9,10 +9,31 @@ export const shopifyEcommerce: Course = {
 				"Find products worth selling and prove demand before you spend money on inventory or ads.",
 			lessons: [
 				{
+					// PLACEHOLDER CONTENT. Replace body, takeaways, chapters, resources and the
+					// video id with the real lesson once the Tella recordings are wired up.
+					body: [
+						"This course is the process Edgecoms uses when we build a Shopify store for a client, cut down to what one person can run alone. It is deliberately ordered. Module 01 finds a product worth selling, Module 02 turns it into a store, and Module 03 buys the traffic. Running those out of order is the most common way new stores lose money.",
+						"You do not need a product, a store, or an ad budget to start. You need a way to take notes and a willingness to throw away your first few product ideas.",
+					],
+					chapters: [
+						{ at: "00:00", label: "What this course is" },
+						{ at: "01:12", label: "Who it is for" },
+						{ at: "02:40", label: "How the modules fit together" },
+						{ at: "04:05", label: "What you need before starting" },
+					],
+					resources: [
+						{ href: "https://edgecoms.com", kind: "link", label: "Edgecoms" },
+					],
 					slug: "introduction",
 					summary:
 						"What this course covers, how the three modules fit together, and what you need before you start.",
+					takeaways: [
+						"The order of the modules is the point. Traffic sent to an unvalidated product loses money faster, not slower.",
+						"Validation is about spending as little as possible to learn whether people will buy.",
+						"Most product ideas fail on margin, not on demand. Learn to check margin first.",
+					],
 					title: "Introduction",
+					video: { id: "REPLACE_WITH_TELLA_VIDEO_ID", provider: "tella" },
 				},
 				{
 					slug: "choosing-a-niche",

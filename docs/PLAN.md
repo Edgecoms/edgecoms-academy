@@ -8,8 +8,8 @@ Status: approved and in progress.
 | 1. Content layer | done |
 | 2. Database and access | done in code; Neon and Resend domain still to provision |
 | 3. Public surface | done |
-| 4. Lesson experience | not started |
-| 5. Progress | not started |
+| 4. Lesson experience | done |
+| 5. Progress | done |
 | 6. Polish and ship | not started |
 
 Two external items block nothing locally but must be done before deploy: a Neon
@@ -252,8 +252,10 @@ Server Components unless marked client.
 - `LessonBody` (server): description paragraphs and prose.
 - `LessonTakeaways` (server): the key takeaways list.
 - `ResourceList` (server): links and downloads, rendered only when the lesson has resources.
-- `LessonChapters` (server): the timestamp list from the reference screenshot. Static text in V1 because the Tella iframe exposes no seek API, so a timestamp cannot jump the player. Rendering them as non-interactive labels is honest; rendering them as buttons that do nothing is not.
-- `CompleteLessonButton` (client): server action, `useActionState` pending state, flips to a completed state.
+- `LessonChapters` (server): the timestamp list from the reference screenshot. Rendered as non-interactive labels.
+
+  **Revised in Phase 4.** Tella's embed does accept a `t` parameter for a start time, so a chapter click could remount the iframe at that timestamp. Two reasons it stays static for now: `autoPlay` only works muted, so a chapter jump would land paused or silent, and there is no real video to test the remount against. Revisit once real recordings exist.
+- `CompleteLessonButton` (server): a `<form>` posting to a server action, with a small client submit button for the pending state. Works without JavaScript, and the same shape is used for "Next", which completes the current lesson and redirects in one round trip.
 - `LessonPagination` (server): previous and next, resolved from the flattened lesson list.
 
 **Dashboard and marketing**
@@ -372,7 +374,9 @@ on conflict (user_id, lesson_slug) do update set
 
 **Resume.** One indexed query, newest `updated_at` for the user. If that row is incomplete, resume points at it; if complete, resume points at the next lesson in content order. If the user has no rows at all, `ContinueLearning` renders the "start here" variant instead. That is the whole "continue learning" feature, no extra table and no `last_lesson_id` column to keep in sync.
 
-**Course progress.** Completed count from one query, total from content. Module progress is the same count filtered to the module's slugs, computed in memory from the single per-course fetch the sidebar already does. The lesson page performs exactly two progress queries per request: the per-course map and nothing else, because the map answers the sidebar, the meter, and the current lesson's state at once.
+**Course progress.** Completed count from one query, total from content. Module progress is the same count filtered to the module's slugs, computed in memory from the single per-course fetch the sidebar already does.
+
+**One query per request, not two.** `getCourseProgress` is wrapped in React's `cache()`, so the lesson layout and the lesson page share a single fetch during one render. Resume is derived from the same rows rather than issuing its own query: `selectResumeTarget` in `lib/resume.ts` is a pure function over the lesson sequence, the newest row, and the completed set, which also makes the branching testable without a database.
 
 **Deliberate ceiling, stated up front:** resume returns to the top of a lesson, not to a video timestamp, because the player will not tell us the timestamp. If Tella is replaced by a player with a real API, add `last_position_seconds` to the existing table and have the video component report it. The table and the action tolerate that column without restructuring.
 
@@ -392,7 +396,7 @@ type LessonVideo = {
 
 `LessonVideo` is a small client component that renders a fixed 16:9 container and switches on `provider`. Today the switch has one arm, `TellaEmbed`, which renders the iframe with `allowFullScreen`, `title` set to the lesson title for screen readers, and no third party script of any kind. Replacing Tella means adding a second arm and changing one field in the content files. No page, layout, or database change.
 
-**The iframe does not render on load.** Because the video sits at the top of the lesson page, `loading="lazy"` does nothing for it, so the component uses a facade: a poster image when the lesson has one, otherwise a typographic title card matching the reference screenshot, with a play button over it. Clicking mounts the iframe with `autoplay=1` and fires the "started" progress action. This keeps the third party frame, its network requests, and its JavaScript entirely out of the initial page load and off the LCP path. The poster is the LCP element and it is a `next/image` we control.
+**The iframe does not render on load.** Because the video sits at the top of the lesson page, `loading="lazy"` does nothing for it, so the component uses a facade: a poster image when the lesson has one, otherwise a typographic title card matching the reference screenshot, with a play button over it. Clicking mounts the iframe and fires the "started" progress action. Verified in Phase 4: Tella's `autoPlay` only autoplays muted, and a cross-origin iframe cannot inherit the click gesture anyway, so the player mounts paused and the student presses Tella's play button. Two clicks for a lesson whose content is the audio beats one click with the sound off. This keeps the third party frame, its network requests, and its JavaScript entirely out of the initial page load and off the LCP path. The poster is the LCP element and it is a `next/image` we control.
 
 The one thing to avoid, and the reason this abstraction is worth its small cost: no component outside `LessonVideo` may know the string "tella". Not the content types beyond the provider literal, not the pages, not the styles.
 

@@ -144,7 +144,14 @@ export default async function CoursePage({ params }: PageProps) {
 										{String(position + 1).padStart(2, "0")}
 									</span>
 									<div className="max-w-2xl">
-										<h4 className="font-medium text-sm">{lesson.title}</h4>
+										<h4 className="font-medium text-sm">
+											<Link
+												className="transition-colors hover:text-muted-foreground"
+												href={`/academy/courses/${course.slug}/${lesson.slug}`}
+											>
+												{lesson.title}
+											</Link>
+										</h4>
 										<p className="mt-1 text-muted-foreground text-sm leading-relaxed">
 											{lesson.summary}
 										</p>
