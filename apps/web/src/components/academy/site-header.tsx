@@ -1,5 +1,4 @@
 import { buttonVariants } from "@edgecoms-academy/ui/components/button";
-import { cn } from "@edgecoms-academy/ui/lib/utils";
 import Link from "next/link";
 
 export function SiteHeader() {
@@ -13,15 +12,6 @@ export function SiteHeader() {
 					Edgecoms Academy
 				</Link>
 				<nav className="flex items-center gap-2">
-					<Link
-						className={cn(
-							buttonVariants({ variant: "ghost" }),
-							"hidden text-muted-foreground sm:inline-flex"
-						)}
-						href="/academy/courses/shopify-ecommerce"
-					>
-						Curriculum
-					</Link>
 					<Link className={buttonVariants()} href="/academy/access">
 						Start learning
 					</Link>

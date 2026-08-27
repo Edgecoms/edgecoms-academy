@@ -56,7 +56,7 @@ export default async function CoursePage({ params }: PageProps) {
 		provider: {
 			"@type": "Organization",
 			name: "Edgecoms",
-			url: "https://edgecoms.com",
+			url: "https://edgecoms.app",
 		},
 	};
 

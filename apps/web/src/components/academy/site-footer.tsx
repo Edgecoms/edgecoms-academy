@@ -10,7 +10,7 @@ export function SiteFooter() {
 					Edgecoms Academy. Free ecommerce education from{" "}
 					<a
 						className="text-foreground underline underline-offset-4 hover:opacity-70"
-						href="https://edgecoms.com"
+						href="https://edgecoms.app"
 						rel="noopener"
 					>
 						Edgecoms
