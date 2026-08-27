@@ -41,22 +41,25 @@ export default async function LessonPage({ params }: PageProps) {
 
 	return (
 		<main className="mx-auto w-full max-w-4xl px-6 py-10 sm:py-14">
-			<p className="font-mono text-eyebrow text-muted-foreground uppercase">
-				{module.number} / {module.title}
-			</p>
-			<h1 className="mt-4 max-w-2xl text-title">{lesson.title}</h1>
-
 			{lesson.video ? (
-				<div className="mt-8">
+				<>
+					{/* the header breadcrumb carries the title; the heading stays for a11y */}
+					<h1 className="sr-only">{lesson.title}</h1>
 					<LessonPlayer
 						courseSlug={courseSlug}
 						lessonSlug={lessonSlug}
 						title={lesson.title}
 						video={lesson.video}
 					/>
-				</div>
+				</>
 			) : (
-				<MarkStartedOnMount courseSlug={courseSlug} lessonSlug={lessonSlug} />
+				<>
+					<p className="font-mono text-eyebrow text-muted-foreground uppercase">
+						{module.number} / {module.title}
+					</p>
+					<h1 className="mt-4 max-w-2xl text-title">{lesson.title}</h1>
+					<MarkStartedOnMount courseSlug={courseSlug} lessonSlug={lessonSlug} />
+				</>
 			)}
 
 			<div

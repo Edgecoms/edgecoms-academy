@@ -43,7 +43,7 @@ export function LessonPlayer({
 
 	if (playing) {
 		return (
-			<div className="relative aspect-video w-full overflow-hidden border border-border bg-black">
+			<div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border bg-black">
 				<iframe
 					allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
@@ -58,7 +58,7 @@ export function LessonPlayer({
 	return (
 		<button
 			aria-label={`Play: ${title}`}
-			className="group relative flex aspect-video w-full items-end overflow-hidden border border-border bg-neutral-950 text-left"
+			className="group relative flex aspect-video w-full items-end overflow-hidden rounded-lg border border-border bg-neutral-950 text-left"
 			onClick={start}
 			type="button"
 		>

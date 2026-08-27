@@ -1,14 +1,14 @@
 import { env } from "@edgecoms-academy/env/web";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 
 import Providers from "@/components/providers";
 import "../index.css";
 
-const geistSans = Geist({
+const inter = Inter({
 	display: "swap",
 	subsets: ["latin"],
-	variable: "--font-geist-sans",
+	variable: "--font-inter",
 });
 
 const geistMono = Geist_Mono({
@@ -33,8 +33,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+		<html
+			className={`${inter.variable} ${geistMono.variable}`}
+			lang="en"
+			suppressHydrationWarning
+		>
+			{/* extensions such as ColorZilla add attributes to body before hydration */}
+			<body suppressHydrationWarning>
 				<Providers>{children}</Providers>
 			</body>
 		</html>
