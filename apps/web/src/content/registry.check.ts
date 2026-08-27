@@ -109,10 +109,37 @@ function everyLessonHasItsOwnIcon() {
 	}
 }
 
+const CHAPTER_AT = /^\d{1,2}:[0-5]\d$/;
+
+function chapterMarksAreWellFormedAndAscending() {
+	for (const course of getCourses()) {
+		for (const {
+			lesson: { slug, chapters },
+		} of getAllLessons(course.slug)) {
+			if (!chapters?.length) {
+				continue;
+			}
+
+			let previous = -1;
+			for (const chapter of chapters) {
+				assert.match(chapter.at, CHAPTER_AT, `${slug} has a bad mark`);
+				const [minutes, seconds] = chapter.at.split(":").map(Number);
+				const at = (minutes ?? 0) * 60 + (seconds ?? 0);
+				assert.ok(
+					at > previous,
+					`${slug} marks are out of order at ${chapter.at}`
+				);
+				previous = at;
+			}
+		}
+	}
+}
+
 const checks = [
 	totalsMatchTheCurriculum,
 	everyLessonHasItsOwnTellaVideo,
 	everyLessonHasItsOwnIcon,
+	chapterMarksAreWellFormedAndAscending,
 	lessonSlugsAreUniqueWithinACourse,
 	lessonsFollowModuleOrder,
 	neighboursLinkTheSequenceAndStopAtBothEnds,

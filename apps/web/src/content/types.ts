@@ -14,13 +14,22 @@ export interface LessonResource {
 	label: string;
 }
 
+/** A run of text, or a link inside one. */
+export type LessonInline = string | { href: string; label: string };
+
+export type LessonBlock =
+	| { items: LessonInline[][]; type: "list" }
+	| { content: LessonInline[]; type: "paragraph" }
+	| { text: string; type: "heading" }
+	| { text: string; type: "quote" };
+
 export interface LessonChapter {
 	at: string;
 	label: string;
 }
 
 export interface Lesson {
-	body?: string[];
+	blocks?: LessonBlock[];
 	chapters?: LessonChapter[];
 	durationSeconds?: number;
 	resources?: LessonResource[];

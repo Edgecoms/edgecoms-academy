@@ -500,16 +500,16 @@ Phases 3 and 4 are independent and can be reordered. Everything else is sequenti
 
 Existing, keep:
 
-- `DATABASE_URL` — Neon pooled connection string. Local dev may point at the docker compose instance instead.
-- `BETTER_AUTH_SECRET` — minimum 32 characters, distinct per environment.
-- `BETTER_AUTH_URL` — full origin. The env package already falls back to the Vercel-provided URL on preview deploys.
+- `DATABASE_URL`: Neon pooled connection string. Local dev may point at the docker compose instance instead.
+- `BETTER_AUTH_SECRET`: minimum 32 characters, distinct per environment.
+- `BETTER_AUTH_URL`: full origin. The env package already falls back to the Vercel-provided URL on preview deploys.
 
 To add:
 
-- `NEXT_PUBLIC_APP_URL` — public origin used for `metadataBase`, canonicals, sitemap and OG image URLs. Must be `https://edgecoms.com/academy`'s origin in production, not the Vercel deployment URL, or every canonical will point at the wrong host. Add to the currently empty client schema in `packages/env/src/web.ts`.
+- `NEXT_PUBLIC_APP_URL`: public origin used for `metadataBase`, canonicals, sitemap and OG image URLs. Must be `https://edgecoms.com/academy`'s origin in production, not the Vercel deployment URL, or every canonical will point at the wrong host. Add to the currently empty client schema in `packages/env/src/web.ts`.
 
-- `RESEND_API_KEY` — server only, required for access codes to send at all.
-- `EMAIL_FROM` — the verified sender, for example `Edgecoms Academy <academy@edgecoms.com>`. Must be on a domain verified in Resend or nothing delivers.
+- `RESEND_API_KEY`: server only, required for access codes to send at all.
+- `EMAIL_FROM`: the verified sender, for example `Edgecoms Academy <academy@edgecoms.com>`. Must be on a domain verified in Resend or nothing delivers.
 
 Not needed in V1: any PostHog or Sentry variable. Tella needs no key; embeds are public by video id.
 

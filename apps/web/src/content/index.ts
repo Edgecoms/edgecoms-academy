@@ -15,7 +15,9 @@ export type {
 	Course,
 	CourseModule,
 	Lesson,
+	LessonBlock,
 	LessonChapter,
+	LessonInline,
 	LessonResource,
 	LessonVideo,
 } from "./types";

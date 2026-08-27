@@ -47,7 +47,7 @@ export function CourseSidebar({
 				{course.modules.map((module) => (
 					<SidebarGroup className="py-1" key={module.slug}>
 						{/* <details> gives the disclosure for free; no state, no client boundary.
-						    `open` is just the initial state — collapsing still works. */}
+						    `open` is just the initial state, so collapsing still works. */}
 						<details className="group/module" open>
 							<SidebarGroupLabel
 								className="cursor-pointer list-none gap-2 text-sidebar-foreground [&::-webkit-details-marker]:hidden"

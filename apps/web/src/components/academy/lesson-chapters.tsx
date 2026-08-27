@@ -3,22 +3,23 @@ import type { LessonChapter } from "@/content/types";
 export function LessonChapters({ chapters }: { chapters: LessonChapter[] }) {
 	return (
 		<section aria-labelledby="chapters-heading">
-			<h2
-				className="font-mono text-eyebrow text-muted-foreground uppercase"
-				id="chapters-heading"
-			>
+			{/* the reference column carries no visible heading; keep one for screen readers */}
+			<h2 className="sr-only" id="chapters-heading">
 				Chapters
 			</h2>
-			<ul className="mt-4 space-y-3">
+			<ul className="flex flex-col gap-4">
 				{chapters.map((chapter) => (
 					<li
 						className="flex gap-4 text-sm"
 						key={`${chapter.at}-${chapter.label}`}
 					>
-						<span className="shrink-0 font-mono text-muted-foreground text-xs tabular-nums">
+						<span className="w-11 shrink-0 text-muted-foreground tabular-nums">
 							{chapter.at}
 						</span>
-						<span className="text-foreground">{chapter.label}</span>
+						{/* the column is narrow, so long labels clip like the reference */}
+						<span className="truncate text-foreground" title={chapter.label}>
+							{chapter.label}
+						</span>
 					</li>
 				))}
 			</ul>

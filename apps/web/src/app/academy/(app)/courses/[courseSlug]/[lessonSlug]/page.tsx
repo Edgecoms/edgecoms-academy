@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { CompleteLessonButton } from "@/components/academy/complete-lesson-button";
+import { LessonBody } from "@/components/academy/lesson-body";
 import { LessonChapters } from "@/components/academy/lesson-chapters";
 import { LessonPagination } from "@/components/academy/lesson-pagination";
 import { LessonPlayer } from "@/components/academy/lesson-player";
@@ -37,20 +39,15 @@ export default async function LessonPage({ params }: PageProps) {
 	const { lesson, module } = location;
 	const { previous, next } = getLessonNeighbours(courseSlug, lessonSlug);
 	const progress = await getCourseProgress(courseSlug);
-	const hasAside = Boolean(lesson.chapters?.length);
+	const hasChapters = Boolean(lesson.chapters?.length);
 
 	return (
-		<div className="mx-auto w-full max-w-4xl px-6 py-10 sm:py-14">
+		<div className="mx-auto w-full max-w-5xl px-6 py-10 sm:px-10 sm:py-14">
 			{lesson.video ? (
 				<>
-					{/* the header breadcrumb carries the title; the heading stays for a11y */}
+					{/* the breadcrumb carries the title; the heading stays for a11y */}
 					<h1 className="sr-only">{lesson.title}</h1>
-					<LessonPlayer
-						courseSlug={courseSlug}
-						lessonSlug={lessonSlug}
-						title={lesson.title}
-						video={lesson.video}
-					/>
+					<LessonPlayer title={lesson.title} video={lesson.video} />
 				</>
 			) : (
 				<>
@@ -58,25 +55,26 @@ export default async function LessonPage({ params }: PageProps) {
 						{module.number} / {module.title}
 					</p>
 					<h1 className="mt-4 max-w-2xl text-title">{lesson.title}</h1>
-					<MarkStartedOnMount courseSlug={courseSlug} lessonSlug={lessonSlug} />
 				</>
 			)}
 
+			{/* the embed autoloads, so opening the lesson is what counts as starting it */}
+			<MarkStartedOnMount courseSlug={courseSlug} lessonSlug={lessonSlug} />
+
+			{/* prose left, chapter list right; the column collapses when a lesson has none */}
 			<div
 				className={
-					hasAside
-						? "mt-10 grid gap-10 lg:grid-cols-[1fr_14rem] lg:gap-14"
-						: "mt-10 max-w-2xl"
+					hasChapters
+						? "mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-16"
+						: "mt-12 max-w-2xl"
 				}
 			>
 				<div className="flex flex-col gap-10">
-					<div className="flex flex-col gap-4">
-						<p className="text-prose">{lesson.summary}</p>
-						{lesson.body?.map((paragraph) => (
-							<p className="text-muted-foreground text-prose" key={paragraph}>
-								{paragraph}
-							</p>
-						))}
+					<div className="flex flex-col gap-5">
+						<p className="text-base leading-relaxed">{lesson.summary}</p>
+						{lesson.blocks?.length ? (
+							<LessonBody blocks={lesson.blocks} />
+						) : null}
 					</div>
 
 					{lesson.takeaways?.length ? (
@@ -107,31 +105,29 @@ export default async function LessonPage({ params }: PageProps) {
 					{lesson.resources?.length ? (
 						<ResourceList resources={lesson.resources} />
 					) : null}
+
+					<div className="border-border border-t pt-8">
+						<CompleteLessonButton
+							completed={progress.completed.has(lessonSlug)}
+							courseSlug={courseSlug}
+							lessonSlug={lessonSlug}
+						/>
+					</div>
 				</div>
 
 				{lesson.chapters?.length ? (
-					<aside className="lg:pt-1">
+					<aside>
 						<LessonChapters chapters={lesson.chapters} />
 					</aside>
 				) : null}
 			</div>
 
-			<div className="mt-12 border-border border-t pt-8">
-				<CompleteLessonButton
-					completed={progress.completed.has(lessonSlug)}
-					courseSlug={courseSlug}
-					lessonSlug={lessonSlug}
-				/>
-			</div>
-
-			<div className="mt-10">
-				<LessonPagination
-					courseSlug={courseSlug}
-					lessonSlug={lessonSlug}
-					next={next}
-					previous={previous}
-				/>
-			</div>
+			<LessonPagination
+				courseSlug={courseSlug}
+				lessonSlug={lessonSlug}
+				next={next}
+				previous={previous}
+			/>
 		</div>
 	);
 }
