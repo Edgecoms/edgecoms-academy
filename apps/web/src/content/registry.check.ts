@@ -22,6 +22,23 @@ function totalsMatchTheCurriculum() {
 	}
 }
 
+const TELLA_ID = /^vid_[a-z0-9]+$/;
+
+function everyLessonHasItsOwnTellaVideo() {
+	const ids = new Set<string>();
+
+	for (const course of getCourses()) {
+		for (const {
+			lesson: { slug, video },
+		} of getAllLessons(course.slug)) {
+			assert.ok(video, `${slug} has no video`);
+			assert.match(video.id, TELLA_ID, `${slug} has a bad Tella id`);
+			assert.ok(!ids.has(video.id), `${video.id} is used by two lessons`);
+			ids.add(video.id);
+		}
+	}
+}
+
 function lessonSlugsAreUniqueWithinACourse() {
 	for (const course of getCourses()) {
 		const slugs = getAllLessons(course.slug).map((entry) => entry.lesson.slug);
@@ -76,6 +93,7 @@ function unknownSlugsResolveToNothing() {
 
 const checks = [
 	totalsMatchTheCurriculum,
+	everyLessonHasItsOwnTellaVideo,
 	lessonSlugsAreUniqueWithinACourse,
 	lessonsFollowModuleOrder,
 	neighboursLinkTheSequenceAndStopAtBothEnds,

@@ -1,10 +1,16 @@
 import { ImageResponse } from "next/og";
 
+import { getCourseTotals } from "@/content";
+
+const COURSE_SLUG = "shopify-ecommerce";
+
 export const alt = "Edgecoms Academy: build your Shopify business from zero";
 export const size = { height: 630, width: 1200 };
 export const contentType = "image/png";
 
 export default function OpengraphImage() {
+	const totals = getCourseTotals(COURSE_SLUG);
+
 	return new ImageResponse(
 		<div
 			style={{
@@ -34,8 +40,8 @@ export default function OpengraphImage() {
 			<div
 				style={{ color: "#a1a1aa", display: "flex", fontSize: 24, gap: "32px" }}
 			>
-				<span>29 lessons</span>
-				<span>3 modules</span>
+				<span>{totals.lessons} lessons</span>
+				<span>{totals.modules} modules</span>
 				<span>Free</span>
 			</div>
 		</div>,

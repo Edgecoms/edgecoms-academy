@@ -1,6 +1,10 @@
 export interface LessonVideo {
 	id: string;
-	poster?: string;
+	/**
+	 * Tella renders thumbnails on demand and rejects any resolution whose aspect
+	 * ratio does not match the recording, so anything not shot 16:9 has to say so.
+	 */
+	posterResolution?: string;
 	provider: "tella";
 }
 

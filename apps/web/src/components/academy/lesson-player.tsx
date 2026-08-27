@@ -8,9 +8,15 @@ import { markLessonStarted } from "@/actions/progress";
 import type { LessonVideo } from "@/content/types";
 
 const TELLA_PARAMS = "b=0&title=0&wt=0&loop=0";
+const DEFAULT_POSTER_RESOLUTION = "1920x1080";
 
 function embedUrl(video: LessonVideo) {
 	return `https://www.tella.tv/video/${video.id}/embed?${TELLA_PARAMS}`;
+}
+
+function posterUrl(video: LessonVideo) {
+	const resolution = video.posterResolution ?? DEFAULT_POSTER_RESOLUTION;
+	return `https://www.tella.tv/api/stories/${video.id}/thumb.webp?resolution=${resolution}`;
 }
 
 interface LessonPlayerProps {
@@ -56,17 +62,15 @@ export function LessonPlayer({
 			onClick={start}
 			type="button"
 		>
-			{video.poster ? (
-				<Image
-					alt=""
-					className="absolute inset-0 h-full w-full object-cover opacity-80"
-					fill
-					sizes="(max-width: 1024px) 100vw, 720px"
-					src={video.poster}
-				/>
-			) : null}
+			<Image
+				alt=""
+				className="absolute inset-0 h-full w-full object-cover"
+				fill
+				sizes="(max-width: 1024px) 100vw, 720px"
+				src={posterUrl(video)}
+			/>
 
-			<span className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+			<span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
 			<span className="relative flex w-full items-end justify-between gap-6 p-6 sm:p-8">
 				<span className="max-w-lg font-medium text-2xl text-neutral-50 tracking-tight sm:text-3xl">

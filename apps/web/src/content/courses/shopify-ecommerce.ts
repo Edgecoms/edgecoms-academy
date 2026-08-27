@@ -6,151 +6,135 @@ export const shopifyEcommerce: Course = {
 	modules: [
 		{
 			blurb:
-				"Find products worth selling and prove demand before you spend money on inventory or ads.",
+				"Understand the business model, pick a niche, find a product worth selling, and get the accounts you need in place.",
 			lessons: [
 				{
-					// PLACEHOLDER CONTENT. Replace body, takeaways, chapters, resources and the
-					// video id with the real lesson once the Tella recordings are wired up.
-					body: [
-						"This course is the process Edgecoms uses when we build a Shopify store for a client, cut down to what one person can run alone. It is deliberately ordered. Module 01 finds a product worth selling, Module 02 turns it into a store, and Module 03 buys the traffic. Running those out of order is the most common way new stores lose money.",
-						"You do not need a product, a store, or an ad budget to start. You need a way to take notes and a willingness to throw away your first few product ideas.",
-					],
-					chapters: [
-						{ at: "00:00", label: "What this course is" },
-						{ at: "01:12", label: "Who it is for" },
-						{ at: "02:40", label: "How the modules fit together" },
-						{ at: "04:05", label: "What you need before starting" },
-					],
-					resources: [
-						{ href: "https://edgecoms.com", kind: "link", label: "Edgecoms" },
-					],
-					slug: "introduction",
+					slug: "introduction-to-dropshipping",
 					summary:
-						"What this course covers, how the three modules fit together, and what you need before you start.",
-					takeaways: [
-						"The order of the modules is the point. Traffic sent to an unvalidated product loses money faster, not slower.",
-						"Validation is about spending as little as possible to learn whether people will buy.",
-						"Most product ideas fail on margin, not on demand. Learn to check margin first.",
-					],
-					title: "Introduction",
-					video: { id: "REPLACE_WITH_TELLA_VIDEO_ID", provider: "tella" },
+						"What dropshipping actually is, what it is not, and what the rest of this course is going to ask of you.",
+					title: "Introduction to Dropshipping",
+					video: { id: "vid_cmszxdqcg00x104ic2360h2y5", provider: "tella" },
 				},
 				{
-					slug: "choosing-a-niche",
+					slug: "ecommerce-business-models",
+					summary:
+						"The main ways to sell online, how they differ on cash, risk, and margin, and which one you are choosing here.",
+					title: "Understanding E-commerce and Business Models",
+					video: { id: "vid_cmszxw7d400j604l66gdqdp85", provider: "tella" },
+				},
+				{
+					slug: "choosing-your-niche",
 					summary:
 						"How to pick a market you can actually compete in, and the niches that quietly kill new stores.",
-					title: "Choosing a Niche",
+					title: "How to Choose Your E-commerce Niche",
+					video: { id: "vid_cmszyf41h00x504jma6sx2n5b", provider: "tella" },
 				},
 				{
-					slug: "finding-products",
+					slug: "finding-winning-products",
 					summary:
-						"Where product ideas actually come from, and how to build a shortlist worth researching.",
-					title: "Finding Products",
+						"Where product ideas come from, and how to judge demand, competition, and margin before you commit.",
+					title: "How to Find Winning Products for E-commerce",
+					video: { id: "vid_cmszz2jbn00aq04juem911q6z", provider: "tella" },
 				},
 				{
-					slug: "product-research",
+					slug: "shopify-account-setup",
 					summary:
-						"Reading demand, competition, and margin before you commit money to a product.",
-					title: "Product Research",
+						"Creating your Shopify account and getting through the signup decisions without guessing.",
+					title: "How to Set Up Your Shopify Account",
+					video: { id: "vid_cmszy0jrv01l504ibhgsue65y", provider: "tella" },
 				},
 				{
-					slug: "product-validation",
+					slug: "us-business-entity",
 					summary:
-						"Cheap tests that tell you whether people will buy, before you order inventory.",
-					title: "Product Validation",
-				},
-				{
-					slug: "supplier-research",
-					summary:
-						"Finding suppliers who can deliver on time, and the questions that expose the ones who cannot.",
-					title: "Supplier Research",
-				},
-				{
-					slug: "pricing",
-					summary:
-						"Building a price that survives ad costs, shipping, and returns, and still leaves you a margin.",
-					title: "Pricing",
-				},
-				{
-					slug: "preparing-for-launch",
-					summary:
-						"Turning a validated product into something you are ready to put a store and a budget behind.",
-					title: "Preparing for Launch",
+						"Registering a U.S. business entity so payments, banking, and ad accounts are in a real company's name.",
+					title: "Setting Up Your U.S. Business Entity",
+					video: { id: "vid_cmszy51kh007p04jsdtmkarvx", provider: "tella" },
 				},
 			],
 			number: "01",
-			slug: "find-validate-products",
-			title: "Find & Validate Products",
+			slug: "foundations-and-products",
+			title: "Foundations & Products",
 		},
 		{
 			blurb:
 				"Build a Shopify store that reads as a real business and converts the traffic you send it.",
 			lessons: [
 				{
-					slug: "shopify-setup",
+					slug: "store-build-introduction",
 					summary:
-						"Creating your store, the settings that matter on day one, and the ones you can safely ignore.",
-					title: "Shopify Setup",
+						"What you are building in this module and the order the store gets put together in.",
+					title: "Introduction",
+					video: {
+						id: "vid_cmt0lik8a041404johslfeups",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "store-structure",
+					slug: "shopify-backend-setup",
 					summary:
-						"Collections, products, and pages arranged so customers find things without thinking.",
-					title: "Store Structure",
+						"Store settings, policies, shipping, and payments configured before anything customer-facing goes up.",
+					title: "Shopify Backend Setup: Store Settings, Policies & Shipping",
+					video: {
+						id: "vid_cmt0lrs7q005n04jm10hx4ynq",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "theme-selection",
+					slug: "products-and-themes",
 					summary:
-						"Choosing a theme you can live with, and why the expensive one is usually not the answer.",
-					title: "Theme Selection",
+						"Adding your products and installing a theme, then setting both up so the store looks like it belongs to someone.",
+					title: "How to Add Products and Themes in Shopify",
+					video: {
+						id: "vid_cmt19i52o020q04ju8kr00d28",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "homepage",
+					slug: "product-hero-images",
 					summary:
-						"What belongs above the fold, what belongs below it, and what belongs nowhere.",
-					title: "Homepage",
+						"Producing hero images for your product pages with ChatGPT instead of paying for a photoshoot.",
+					title: "Create Product Hero Images with ChatGPT",
+					video: {
+						id: "vid_cmt1ekde8019o04lg8odl8wb9",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "product-pages",
+					slug: "installing-conversion-apps",
 					summary:
-						"The page that does the selling: images, copy, options, and objection handling.",
-					title: "Product Pages",
+						"The apps worth installing on a new store, and how to add each one step by step.",
+					title: "How to Install the Essential Shopify Conversion Apps",
+					video: {
+						id: "vid_cmt1dl87200gr04if8oy3hait",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "navigation",
+					slug: "configuring-conversion-apps",
 					summary:
-						"Menus, search, and filtering that shorten the path from landing to cart.",
-					title: "Navigation",
+						"Configuring those apps so they help the sale instead of cluttering the page.",
+					title: "Setting Up Your Shopify Conversion Apps",
+					video: {
+						id: "vid_cmt1eanma039704jre6wr4agu",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "branding",
+					slug: "install-trackproof",
 					summary:
-						"Building a look that reads as a real business without hiring a design agency.",
-					title: "Branding",
-				},
-				{
-					slug: "trust-elements",
-					summary:
-						"Reviews, policies, and signals that answer 'is this a real store' before the customer asks.",
-					title: "Trust Elements",
-				},
-				{
-					slug: "conversion-optimization",
-					summary:
-						"Finding where visitors drop off, and fixing the causes in order of impact.",
-					title: "Conversion Optimization",
-				},
-				{
-					slug: "checkout",
-					summary:
-						"Shipping, payments, and taxes configured so the last step does not lose the sale.",
-					title: "Checkout",
-				},
-				{
-					slug: "launch-preparation",
-					summary:
-						"The checks to run before you send your first paid visitor to the store.",
-					title: "Launch Preparation",
+						"Installing Trackproof so order tracking is handled before your first customer asks where their parcel is.",
+					title: "How to Install Trackproof in Shopify",
+					video: {
+						id: "vid_cmt8afdjc000k04l9cur7076z",
+						posterResolution: "1920x1200",
+						provider: "tella",
+					},
 				},
 			],
 			number: "02",
@@ -159,67 +143,39 @@ export const shopifyEcommerce: Course = {
 		},
 		{
 			blurb:
-				"Acquire customers with Meta Ads, from account setup through to scaling what works.",
+				"Acquire customers with Meta Ads, from account setup through to reading what the numbers are telling you.",
 			lessons: [
 				{
-					slug: "meta-business-manager",
+					slug: "meta-ads-account-setup",
 					summary:
-						"Setting up Business Manager properly so you never lose access to your own assets.",
-					title: "Meta Business Manager",
+						"Business Manager, ad account, and payment method set up so you never lose access to your own assets.",
+					title: "How to Set Up Your Meta Ads Account",
+					video: {
+						id: "vid_cmt1jtvpv03d504kt4ma326ze",
+						posterResolution: "1920x960",
+						provider: "tella",
+					},
 				},
 				{
-					slug: "ad-account-setup",
+					slug: "meta-ads-fundamentals",
 					summary:
-						"Ad accounts, payment methods, and permissions, configured to survive growth.",
-					title: "Ad Account Setup",
+						"What campaigns, ad sets, and ads each control, and which decisions belong at which level.",
+					title: "Meta Ads Fundamentals: Campaign, Ad Set & Ad",
+					video: { id: "vid_cmt1izz6000md04kwd6lr6qhm", provider: "tella" },
 				},
 				{
-					slug: "pixel-and-tracking",
+					slug: "launching-your-first-campaign",
 					summary:
-						"Installing the Pixel and Conversions API so Meta can see what it is optimizing for.",
-					title: "Pixel & Tracking",
+						"Building and publishing your first campaign end to end, with budgets you can afford to lose.",
+					title: "Launching Your First Campaign",
+					video: { id: "vid_cmt1lkhjc00g104ief0o2azin", provider: "tella" },
 				},
 				{
-					slug: "campaign-structure",
-					summary:
-						"Laying out campaigns and ad sets so results stay readable and budgets stay controllable.",
-					title: "Campaign Structure",
-				},
-				{
-					slug: "creative-strategy",
-					summary:
-						"The ads that do the work: angles, formats, and how many you need before judging anything.",
-					title: "Creative Strategy",
-				},
-				{
-					slug: "targeting",
-					summary:
-						"Audiences, broad targeting, and how much of this Meta now decides for you.",
-					title: "Targeting",
-				},
-				{
-					slug: "launching-campaigns",
-					summary:
-						"Budgets, bidding, and getting through the first days of a campaign calmly.",
-					title: "Launching Campaigns",
-				},
-				{
-					slug: "reading-results",
+					slug: "monitor-and-analyze-meta-ads",
 					summary:
 						"Which metrics mean something, which are noise, and when you have enough data to act.",
-					title: "Reading Results",
-				},
-				{
-					slug: "optimization",
-					summary:
-						"Cutting what fails and feeding what works, without resetting learning every week.",
-					title: "Optimization",
-				},
-				{
-					slug: "scaling",
-					summary:
-						"Increasing spend while keeping the underlying economics intact.",
-					title: "Scaling",
+					title: "How to Monitor and Analyze Meta Ads",
+					video: { id: "vid_cmt8jat8w002c04ih9ioye85n", provider: "tella" },
 				},
 			],
 			number: "03",
