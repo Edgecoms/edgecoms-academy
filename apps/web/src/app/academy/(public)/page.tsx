@@ -1,3 +1,5 @@
+import { buttonVariants } from "@edgecoms-academy/ui/components/button";
+import { cn } from "@edgecoms-academy/ui/lib/utils";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -64,7 +66,7 @@ export default function AcademyPage() {
 					style={{ animationDelay: "180ms" }}
 				>
 					<Link
-						className="inline-flex h-10 items-center bg-primary px-5 font-medium text-primary-foreground text-sm transition-opacity hover:opacity-85"
+						className={buttonVariants({ size: "lg" })}
 						href="/academy/access"
 					>
 						Start learning
@@ -127,7 +129,10 @@ export default function AcademyPage() {
 						</p>
 					</div>
 					<Link
-						className="inline-flex h-10 shrink-0 items-center border border-border px-5 font-medium text-sm transition-colors hover:bg-muted"
+						className={cn(
+							buttonVariants({ size: "lg", variant: "outline" }),
+							"shrink-0"
+						)}
 						href="/academy/courses/shopify-ecommerce"
 					>
 						View all {totals.lessons} lessons

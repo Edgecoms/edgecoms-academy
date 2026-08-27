@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
 	return {
 		rules: {
 			allow: "/",
-			disallow: ["/api/", "/academy/access", "/academy/dashboard"],
+			disallow: ["/api/", "/academy/access"],
 			userAgent: "*",
 		},
 		sitemap: `${env.NEXT_PUBLIC_APP_URL}/sitemap.xml`,

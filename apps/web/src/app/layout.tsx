@@ -1,14 +1,17 @@
 import { env } from "@edgecoms-academy/env/web";
 import type { Metadata } from "next";
-import { Geist_Mono, Inter } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 
 import Providers from "@/components/providers";
 import "../index.css";
 
-const inter = Inter({
+const inter = localFont({
 	display: "swap",
-	subsets: ["latin"],
+	src: "../assets/fonts/InterVariable.woff2",
+	style: "normal",
 	variable: "--font-inter",
+	weight: "100 900",
 });
 
 const geistMono = Geist_Mono({

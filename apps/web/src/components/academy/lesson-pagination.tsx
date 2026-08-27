@@ -1,8 +1,15 @@
+import { buttonVariants } from "@edgecoms-academy/ui/components/button";
+import { cn } from "@edgecoms-academy/ui/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { completeAndAdvance } from "@/actions/progress";
 import type { LessonLocation } from "@/content";
+
+import { SubmitButton } from "./submit-button";
+
+const NAV_BUTTON_CLASS =
+	"h-auto w-full flex-col gap-1 whitespace-normal p-4 text-left";
 
 interface LessonPaginationProps {
 	courseSlug: string;
@@ -24,7 +31,11 @@ export function LessonPagination({
 		>
 			{previous ? (
 				<Link
-					className="group flex flex-col gap-1 border border-border p-4 transition-colors hover:bg-muted"
+					className={cn(
+						buttonVariants({ size: "lg", variant: "outline" }),
+						NAV_BUTTON_CLASS,
+						"items-start"
+					)}
 					href={`/academy/courses/${courseSlug}/${previous.lesson.slug}`}
 				>
 					<span className="flex items-center gap-1.5 font-mono text-eyebrow text-muted-foreground uppercase">
@@ -42,16 +53,17 @@ export function LessonPagination({
 					<input name="courseSlug" type="hidden" value={courseSlug} />
 					<input name="lessonSlug" type="hidden" value={lessonSlug} />
 					<input name="nextSlug" type="hidden" value={next.lesson.slug} />
-					<button
-						className="flex w-full flex-col items-end gap-1 border border-border p-4 text-right transition-colors hover:bg-muted"
-						type="submit"
+					<SubmitButton
+						className={cn(NAV_BUTTON_CLASS, "items-end text-right")}
+						size="lg"
+						variant="outline"
 					>
 						<span className="flex items-center gap-1.5 font-mono text-eyebrow text-muted-foreground uppercase">
 							Next
 							<ArrowRight className="size-3" />
 						</span>
 						<span className="font-medium text-sm">{next.lesson.title}</span>
-					</button>
+					</SubmitButton>
 				</form>
 			) : null}
 		</nav>

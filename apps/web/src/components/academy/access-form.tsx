@@ -151,7 +151,7 @@ function CodeStep({
 				);
 			}
 
-			router.push("/academy/dashboard");
+			router.push("/academy/courses/shopify-ecommerce");
 			router.refresh();
 			return null;
 		},

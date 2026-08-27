@@ -1,3 +1,4 @@
+import { Badge } from "@edgecoms-academy/ui/components/badge";
 import { Check } from "lucide-react";
 
 import { completeLesson } from "@/actions/progress";
@@ -17,10 +18,13 @@ export function CompleteLessonButton({
 }: CompleteLessonButtonProps) {
 	if (completed) {
 		return (
-			<p className="inline-flex h-9 items-center gap-2 font-medium text-muted-foreground text-sm">
-				<Check className="size-4" />
+			<Badge
+				className="h-9 gap-2 px-4 text-muted-foreground text-sm"
+				variant="outline"
+			>
+				<Check />
 				Completed
-			</p>
+			</Badge>
 		);
 	}
 
@@ -28,7 +32,7 @@ export function CompleteLessonButton({
 		<form action={completeLesson}>
 			<input name="courseSlug" type="hidden" value={courseSlug} />
 			<input name="lessonSlug" type="hidden" value={lessonSlug} />
-			<SubmitButton className="inline-flex h-9 items-center gap-2 border border-border px-4 font-medium text-sm transition-colors hover:bg-muted disabled:opacity-60">
+			<SubmitButton size="lg" variant="outline">
 				Mark as complete
 			</SubmitButton>
 		</form>

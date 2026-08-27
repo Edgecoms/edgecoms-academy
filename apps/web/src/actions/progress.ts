@@ -34,7 +34,6 @@ async function resolveLesson(input: unknown) {
 
 function revalidateProgress(courseSlug: string, lessonSlug: string) {
 	revalidatePath(`/academy/courses/${courseSlug}/${lessonSlug}`, "layout");
-	revalidatePath("/academy/dashboard");
 }
 
 export async function markLessonStarted(input: z.input<typeof lessonRef>) {

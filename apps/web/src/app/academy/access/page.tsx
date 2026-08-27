@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default async function AccessPage() {
 	const session = await getOptionalSession();
 	if (session) {
-		redirect("/academy/dashboard");
+		redirect("/academy/courses/shopify-ecommerce");
 	}
 
 	return (

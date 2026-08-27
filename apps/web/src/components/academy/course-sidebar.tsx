@@ -10,7 +10,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@edgecoms-academy/ui/components/sidebar";
-import { Check, ChevronDown, LayoutGrid, ListVideo } from "lucide-react";
+import { Check, ChevronDown, ListVideo } from "lucide-react";
 import Link from "next/link";
 
 import type { Course } from "@/content/types";
@@ -34,7 +34,7 @@ export function CourseSidebar({
 			<SidebarHeader className="gap-3 border-sidebar-border border-b px-4 py-4">
 				<Link
 					className="font-medium text-sm transition-opacity hover:opacity-70"
-					href="/academy/dashboard"
+					href="/academy"
 				>
 					Edgecoms Academy
 				</Link>
@@ -125,12 +125,6 @@ export function CourseSidebar({
 
 			<SidebarFooter className="border-sidebar-border border-t px-1 py-2">
 				<SidebarMenu>
-					<SidebarMenuItem>
-						<SidebarMenuButton render={<Link href="/academy/dashboard" />}>
-							<LayoutGrid />
-							<span className="text-muted-foreground">Dashboard</span>
-						</SidebarMenuButton>
-					</SidebarMenuItem>
 					<SidebarMenuItem>
 						<SidebarMenuButton
 							render={<Link href={`/academy/courses/${course.slug}`} />}

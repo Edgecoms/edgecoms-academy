@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@edgecoms-academy/ui/components/button";
 import { Play } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useState } from "react";
@@ -56,11 +57,12 @@ export function LessonPlayer({
 	}
 
 	return (
-		<button
+		<Button
 			aria-label={`Play: ${title}`}
-			className="group relative flex aspect-video w-full items-end overflow-hidden rounded-lg border border-border bg-neutral-950 text-left"
+			// the poster art carries the surface; the button only lends focus and press behaviour
+			className="group relative flex aspect-video h-auto w-full items-end justify-start gap-0 overflow-hidden whitespace-normal rounded-lg border-border bg-neutral-950 p-0 text-left hover:bg-neutral-950 dark:hover:bg-neutral-950"
 			onClick={start}
-			type="button"
+			variant="ghost"
 		>
 			<Image
 				alt=""
@@ -80,6 +82,6 @@ export function LessonPlayer({
 					<Play className="size-5 translate-x-px fill-current" />
 				</span>
 			</span>
-		</button>
+		</Button>
 	);
 }

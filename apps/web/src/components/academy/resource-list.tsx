@@ -1,3 +1,5 @@
+import { buttonVariants } from "@edgecoms-academy/ui/components/button";
+import { cn } from "@edgecoms-academy/ui/lib/utils";
 import { ArrowUpRight, Download, FileText } from "lucide-react";
 import type { LessonResource } from "@/content/types";
 
@@ -19,13 +21,16 @@ export function ResourceList({ resources }: { resources: LessonResource[] }) {
 					return (
 						<li className="border-border border-b" key={resource.href}>
 							<a
-								className="group flex items-center gap-3 py-3 text-sm transition-colors hover:text-foreground"
+								className={cn(
+									buttonVariants({ variant: "ghost" }),
+									"group h-auto w-full justify-start gap-3 whitespace-normal rounded-none px-2 py-3"
+								)}
 								href={resource.href}
 								rel="noopener"
 								target="_blank"
 							>
-								<Icon className="size-4 shrink-0 text-muted-foreground" />
-								<span className="text-foreground">{resource.label}</span>
+								<Icon className="shrink-0 text-muted-foreground" />
+								<span>{resource.label}</span>
 								<ArrowUpRight className="ml-auto size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
 							</a>
 						</li>

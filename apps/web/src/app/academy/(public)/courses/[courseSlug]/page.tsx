@@ -1,3 +1,4 @@
+import { buttonVariants } from "@edgecoms-academy/ui/components/button";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -104,7 +105,7 @@ export default async function CoursePage({ params }: PageProps) {
 
 				<div className="mt-10">
 					<Link
-						className="inline-flex h-10 items-center bg-primary px-5 font-medium text-primary-foreground text-sm transition-opacity hover:opacity-85"
+						className={buttonVariants({ size: "lg" })}
 						href="/academy/access"
 					>
 						Start learning

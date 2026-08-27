@@ -1,3 +1,5 @@
+import { buttonVariants } from "@edgecoms-academy/ui/components/button";
+import { cn } from "@edgecoms-academy/ui/lib/utils";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -16,7 +18,10 @@ export function SiteFooter() {
 					.
 				</p>
 				<Link
-					className="text-muted-foreground text-sm transition-colors hover:text-foreground"
+					className={cn(
+						buttonVariants({ variant: "link" }),
+						"self-start px-0 text-muted-foreground hover:text-foreground sm:self-auto"
+					)}
 					href="/academy/courses/shopify-ecommerce"
 				>
 					Browse the curriculum
