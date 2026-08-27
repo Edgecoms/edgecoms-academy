@@ -1,19 +1,7 @@
-import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-} from "@edgecoms-academy/ui/components/breadcrumb";
-import {
-	SidebarInset,
-	SidebarProvider,
-	SidebarTrigger,
-} from "@edgecoms-academy/ui/components/sidebar";
 import { notFound } from "next/navigation";
 
-import { AppHeader } from "@/components/academy/app-header";
-import { CourseSidebar } from "@/components/academy/course-sidebar";
+import { LearnShell } from "@/components/academy/learn-shell";
+import { UserMenu } from "@/components/academy/user-menu";
 import { getCourse, getLesson } from "@/content";
 import { getCourseProgress } from "@/lib/progress";
 import { requireSession } from "@/lib/session";
@@ -35,42 +23,19 @@ export default async function LessonLayout({ children, params }: LayoutProps) {
 
 	const progress = await getCourseProgress(courseSlug);
 
-	const breadcrumb = (
-		<Breadcrumb className="min-w-0">
-			<BreadcrumbList className="flex-nowrap gap-1.5 text-xs">
-				<BreadcrumbItem className="min-w-0">
-					<span className="truncate">{location.module.title}</span>
-				</BreadcrumbItem>
-				<BreadcrumbSeparator className="text-muted-foreground/50">
-					/
-				</BreadcrumbSeparator>
-				<BreadcrumbItem className="min-w-0">
-					<BreadcrumbPage className="truncate">
-						{location.lesson.title}
-					</BreadcrumbPage>
-				</BreadcrumbItem>
-			</BreadcrumbList>
-		</Breadcrumb>
-	);
-
 	return (
-		<SidebarProvider
-			style={{ "--sidebar-width": "17rem" } as React.CSSProperties}
+		<LearnShell
+			// the session is already resolved here, so no client round trip
+			action={
+				<UserMenu email={session.user.email} name={session.user.name ?? ""} />
+			}
+			completed={progress.completed}
+			course={course}
+			currentLessonSlug={lessonSlug}
+			progress={progress}
+			trail={[course.title, location.module.title, location.lesson.title]}
 		>
-			<CourseSidebar
-				completed={progress.completed}
-				course={course}
-				currentLessonSlug={lessonSlug}
-				progress={progress}
-			/>
-			<SidebarInset>
-				<AppHeader
-					breadcrumb={breadcrumb}
-					nav={<SidebarTrigger />}
-					user={{ email: session.user.email, name: session.user.name }}
-				/>
-				{children}
-			</SidebarInset>
-		</SidebarProvider>
+			{children}
+		</LearnShell>
 	);
 }
