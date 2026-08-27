@@ -43,7 +43,7 @@ export function CourseSidebar({
 				</Link>
 			</SidebarHeader>
 
-			<SidebarContent className="gap-0 px-1 py-2">
+			<SidebarContent className="gap-5 px-1 py-3">
 				{course.modules.map((module) => (
 					<SidebarGroup className="py-1" key={module.slug}>
 						{/* <details> gives the disclosure for free; no state, no client boundary.
