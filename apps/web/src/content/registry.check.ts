@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 
+import { hasLessonIcon, lessonIcon } from "../components/academy/lesson-icon";
 import {
 	getAllLessons,
 	getCourse,
@@ -91,9 +92,27 @@ function unknownSlugsResolveToNothing() {
 	});
 }
 
+function everyLessonHasItsOwnIcon() {
+	const seen = new Map<unknown, string>();
+
+	for (const course of getCourses()) {
+		for (const {
+			lesson: { slug },
+		} of getAllLessons(course.slug)) {
+			assert.ok(hasLessonIcon(slug), `${slug} has no mapped icon`);
+
+			const icon = lessonIcon(slug);
+			const owner = seen.get(icon);
+			assert.ok(!owner, `${slug} reuses the icon already used by ${owner}`);
+			seen.set(icon, slug);
+		}
+	}
+}
+
 const checks = [
 	totalsMatchTheCurriculum,
 	everyLessonHasItsOwnTellaVideo,
+	everyLessonHasItsOwnIcon,
 	lessonSlugsAreUniqueWithinACourse,
 	lessonsFollowModuleOrder,
 	neighboursLinkTheSequenceAndStopAtBothEnds,

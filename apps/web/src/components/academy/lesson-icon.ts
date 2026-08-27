@@ -1,44 +1,57 @@
 import {
 	BarChart3,
-	Boxes,
 	Compass,
 	CreditCard,
+	Image as ImageIcon,
+	Landmark,
 	Layers,
 	type LucideIcon,
 	Megaphone,
 	PackageSearch,
-	Palette,
+	Puzzle,
 	Rocket,
-	ShoppingCart,
+	Settings,
+	ShieldCheck,
+	SlidersHorizontal,
+	Store,
 	Target,
+	LayoutTemplate as Template,
 	Truck,
 } from "lucide-react";
 
-const LESSON_ICONS: LucideIcon[] = [
-	Compass,
-	PackageSearch,
-	Target,
-	Layers,
-	ShoppingCart,
-	Palette,
-	CreditCard,
-	Truck,
-	Megaphone,
-	BarChart3,
-	Boxes,
-	Rocket,
-];
-
 /**
- * Cards need a glyph each and the content has no icon field, so derive one from
- * the slug. Hashing rather than indexing keeps a lesson's icon stable when
- * lessons are reordered or inserted.
+ * Lessons carry no icon field, so the glyph is mapped here by slug. Hand-mapped
+ * rather than hashed: a hash over a fixed pool collides, which showed up as the
+ * same icon repeating several times down the sidebar.
  */
+const LESSON_ICONS: Record<string, LucideIcon> = {
+	"choosing-your-niche": Target,
+	"configuring-conversion-apps": SlidersHorizontal,
+	"ecommerce-business-models": Layers,
+	"finding-winning-products": PackageSearch,
+	"install-trackproof": ShieldCheck,
+	"installing-conversion-apps": Puzzle,
+	"introduction-to-dropshipping": Truck,
+	"launching-your-first-campaign": Rocket,
+	"meta-ads-account-setup": CreditCard,
+	"meta-ads-fundamentals": Megaphone,
+	"monitor-and-analyze-meta-ads": BarChart3,
+	"product-hero-images": ImageIcon,
+	"products-and-themes": Template,
+	"shopify-account-setup": Store,
+	"shopify-backend-setup": Settings,
+	"store-build-introduction": Compass,
+	"us-business-entity": Landmark,
+};
+
+/** Keeps a lesson added later from rendering nothing. */
+const FALLBACK_ICON: LucideIcon = Compass;
+
 export function lessonIcon(slug: string): LucideIcon {
-	let hash = 0;
-	for (const character of slug) {
-		hash = (hash * 31 + character.charCodeAt(0)) % 100_000;
-	}
-	// biome-ignore lint/style/noNonNullAssertion: modulo of a non-empty array is always in range
-	return LESSON_ICONS[hash % LESSON_ICONS.length]!;
+	return LESSON_ICONS[slug] ?? FALLBACK_ICON;
+}
+
+/** Exported for the content check, which asserts every lesson is mapped. */
+export function hasLessonIcon(slug: string): boolean {
+	return slug in LESSON_ICONS;
 }
