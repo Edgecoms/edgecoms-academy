@@ -1,0 +1,146 @@
+import {
+	Sidebar,
+	SidebarContent,
+	SidebarFooter,
+	SidebarGroup,
+	SidebarGroupContent,
+	SidebarGroupLabel,
+	SidebarHeader,
+	SidebarMenu,
+	SidebarMenuButton,
+	SidebarMenuItem,
+} from "@edgecoms-academy/ui/components/sidebar";
+import { Check, ChevronDown, LayoutGrid, ListVideo } from "lucide-react";
+import Link from "next/link";
+
+import type { Course } from "@/content/types";
+import { CourseProgressMeter } from "./course-progress-meter";
+
+interface CourseSidebarProps {
+	completed: Set<string>;
+	course: Course;
+	currentLessonSlug: string;
+	progress: { completedCount: number; percent: number; totalCount: number };
+}
+
+export function CourseSidebar({
+	course,
+	currentLessonSlug,
+	completed,
+	progress,
+}: CourseSidebarProps) {
+	return (
+		<Sidebar>
+			<SidebarHeader className="gap-3 border-sidebar-border border-b px-4 py-4">
+				<Link
+					className="font-medium text-sm transition-opacity hover:opacity-70"
+					href="/academy/dashboard"
+				>
+					Edgecoms Academy
+				</Link>
+				<CourseProgressMeter
+					completedCount={progress.completedCount}
+					percent={progress.percent}
+					totalCount={progress.totalCount}
+				/>
+			</SidebarHeader>
+
+			<SidebarContent className="gap-0 px-1 py-2">
+				{course.modules.map((module) => {
+					const isCurrentModule = module.lessons.some(
+						(lesson) => lesson.slug === currentLessonSlug
+					);
+					const completedInModule = module.lessons.filter((lesson) =>
+						completed.has(lesson.slug)
+					).length;
+
+					return (
+						<SidebarGroup className="py-1" key={module.slug}>
+							{/* <details> gives the disclosure for free; no state, no client boundary */}
+							<details
+								className="group/module"
+								open={isCurrentModule || undefined}
+							>
+								<SidebarGroupLabel
+									className="cursor-pointer list-none gap-2 text-sidebar-foreground [&::-webkit-details-marker]:hidden"
+									render={<summary />}
+								>
+									<span className="font-mono text-muted-foreground text-xs tabular-nums">
+										{module.number}
+									</span>
+									<span className="truncate font-medium">{module.title}</span>
+									<span className="ml-auto font-mono text-[0.6875rem] text-muted-foreground tabular-nums">
+										{completedInModule}/{module.lessons.length}
+									</span>
+									<ChevronDown className="size-3.5 -rotate-90 text-muted-foreground transition-transform group-open/module:rotate-0" />
+								</SidebarGroupLabel>
+
+								<SidebarGroupContent className="mt-1">
+									<SidebarMenu>
+										{module.lessons.map((lesson) => {
+											const isCurrent = lesson.slug === currentLessonSlug;
+											const isComplete = completed.has(lesson.slug);
+
+											return (
+												<SidebarMenuItem key={lesson.slug}>
+													<SidebarMenuButton
+														isActive={isCurrent}
+														render={
+															<Link
+																href={`/academy/courses/${course.slug}/${lesson.slug}`}
+															/>
+														}
+														{...(isCurrent ? { "aria-current": "page" } : {})}
+													>
+														{isComplete ? (
+															<Check />
+														) : (
+															<span
+																aria-hidden="true"
+																className="flex size-4 shrink-0 items-center justify-center"
+															>
+																<span
+																	className={`size-1.5 rounded-full ${isCurrent ? "bg-sidebar-accent-foreground" : "bg-sidebar-foreground/25"}`}
+																/>
+															</span>
+														)}
+														<span
+															className={
+																isCurrent ? undefined : "text-muted-foreground"
+															}
+														>
+															{lesson.title}
+														</span>
+													</SidebarMenuButton>
+												</SidebarMenuItem>
+											);
+										})}
+									</SidebarMenu>
+								</SidebarGroupContent>
+							</details>
+						</SidebarGroup>
+					);
+				})}
+			</SidebarContent>
+
+			<SidebarFooter className="border-sidebar-border border-t px-1 py-2">
+				<SidebarMenu>
+					<SidebarMenuItem>
+						<SidebarMenuButton render={<Link href="/academy/dashboard" />}>
+							<LayoutGrid />
+							<span className="text-muted-foreground">Dashboard</span>
+						</SidebarMenuButton>
+					</SidebarMenuItem>
+					<SidebarMenuItem>
+						<SidebarMenuButton
+							render={<Link href={`/academy/courses/${course.slug}`} />}
+						>
+							<ListVideo />
+							<span className="text-muted-foreground">Course overview</span>
+						</SidebarMenuButton>
+					</SidebarMenuItem>
+				</SidebarMenu>
+			</SidebarFooter>
+		</Sidebar>
+	);
+}

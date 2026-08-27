@@ -40,7 +40,7 @@ export default async function LessonPage({ params }: PageProps) {
 	const hasAside = Boolean(lesson.chapters?.length);
 
 	return (
-		<main className="mx-auto w-full max-w-4xl px-6 py-10 sm:py-14">
+		<div className="mx-auto w-full max-w-4xl px-6 py-10 sm:py-14">
 			{lesson.video ? (
 				<>
 					{/* the header breadcrumb carries the title; the heading stays for a11y */}
@@ -132,6 +132,6 @@ export default async function LessonPage({ params }: PageProps) {
 					previous={previous}
 				/>
 			</div>
-		</main>
+		</div>
 	);
 }
