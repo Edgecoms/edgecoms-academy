@@ -39,6 +39,23 @@
 	--sidebar-accent-foreground: oklch(0.21 0.004 264);
 	--sidebar-border: oklch(0.921 0.004 264);
 	--sidebar-ring: oklch(0.708 0.008 264);
+
+	/* Academy Hero & Theme Variables (Light) */
+	--hero-bg-from: #2a084e;
+	--hero-bg-via: #411077;
+	--hero-bg-to: #1d0538;
+	--hero-glow: rgba(168, 85, 247, 0.28);
+	--hero-foreground: #ffffff;
+	--hero-muted: #e4d7f5;
+	--hero-subtle: #baa4df;
+	--hero-border: rgba(255, 255, 255, 0.15);
+	--hero-cta-bg: #facc15;
+	--hero-cta-fg: #171102;
+	--hero-cta-hover: #fde047;
+	--hero-badge-bg: rgba(255, 255, 255, 0.1);
+	--hero-badge-border: rgba(255, 255, 255, 0.2);
+	--accent-purple: oklch(0.52 0.24 290);
+	--accent-purple-subtle: oklch(0.96 0.02 290);
 }
 
 .dark {
@@ -73,6 +90,23 @@
 	--sidebar-accent-foreground: oklch(0.965 0.002 264);
 	--sidebar-border: oklch(1 0 0 / 8%);
 	--sidebar-ring: oklch(0.45 0.008 264);
+
+	/* Academy Hero & Theme Variables (Dark) */
+	--hero-bg-from: #1c0535;
+	--hero-bg-via: #2e0a56;
+	--hero-bg-to: #120224;
+	--hero-glow: rgba(192, 132, 252, 0.22);
+	--hero-foreground: #ffffff;
+	--hero-muted: #dfcef5;
+	--hero-subtle: #a389cd;
+	--hero-border: rgba(255, 255, 255, 0.12);
+	--hero-cta-bg: #facc15;
+	--hero-cta-fg: #171102;
+	--hero-cta-hover: #fde047;
+	--hero-badge-bg: rgba(255, 255, 255, 0.08);
+	--hero-badge-border: rgba(255, 255, 255, 0.16);
+	--accent-purple: oklch(0.72 0.22 290);
+	--accent-purple-subtle: oklch(0.22 0.06 290);
 }
 
 @theme inline {
@@ -109,6 +143,21 @@
 	--color-card: var(--card);
 	--color-foreground: var(--foreground);
 	--color-background: var(--background);
+	--color-hero-bg-from: var(--hero-bg-from);
+	--color-hero-bg-via: var(--hero-bg-via);
+	--color-hero-bg-to: var(--hero-bg-to);
+	--color-hero-glow: var(--hero-glow);
+	--color-hero-foreground: var(--hero-foreground);
+	--color-hero-muted: var(--hero-muted);
+	--color-hero-subtle: var(--hero-subtle);
+	--color-hero-border: var(--hero-border);
+	--color-hero-cta-bg: var(--hero-cta-bg);
+	--color-hero-cta-fg: var(--hero-cta-fg);
+	--color-hero-cta-hover: var(--hero-cta-hover);
+	--color-hero-badge-bg: var(--hero-badge-bg);
+	--color-hero-badge-border: var(--hero-badge-border);
+	--color-accent-purple: var(--accent-purple);
+	--color-accent-purple-subtle: var(--accent-purple-subtle);
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
