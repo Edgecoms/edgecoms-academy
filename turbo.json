@@ -34,17 +34,17 @@
     },
     "db:push": {
       "cache": false,
-      "interactive": true,
+      "interactive": false,
       "env": ["DATABASE_URL"]
     },
     "db:generate": {
       "cache": false,
-      "interactive": true,
+      "interactive": false,
       "env": ["DATABASE_URL"]
     },
     "db:migrate": {
       "cache": false,
-      "interactive": true,
+      "interactive": false,
       "env": ["DATABASE_URL"]
     },
     "db:studio": {
