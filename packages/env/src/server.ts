@@ -30,7 +30,7 @@ export const env = createEnv({
 		EMAIL_FROM: z
 			.string()
 			.min(1)
-			.default("Edgecoms Academy <academy@edgecoms.test>"),
+			.default("Edgecoms Academy <academy@tryedgegrowth.com>"),
 		EMAIL_TRANSPORT: z.enum(["smtp", "resend"]).optional(),
 		NODE_ENV: z
 			.enum(["development", "production", "test"])
