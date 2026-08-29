@@ -17,6 +17,7 @@ export const user = pgTable("user", {
 	id: text("id").primaryKey(),
 	image: text("image"),
 	name: text("name").notNull(),
+	phone: text("phone"),
 	updatedAt: timestamp("updated_at")
 		.defaultNow()
 		.$onUpdate(() => /* @__PURE__ */ new Date())

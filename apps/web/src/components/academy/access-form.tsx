@@ -11,10 +11,12 @@ import { authClient } from "@/lib/auth-client";
 
 const RESEND_COOLDOWN_SECONDS = 45;
 const CODE_LENGTH = 6;
+const MIN_PHONE_DIGITS = 8;
 
 interface Requested {
 	email: string;
 	name: string;
+	phone: string;
 }
 
 export function AccessForm() {
@@ -36,6 +38,7 @@ function EmailStep({
 		async (_: string | null, form: FormData) => {
 			const email = String(form.get("email")).trim().toLowerCase();
 			const name = String(form.get("name")).trim();
+			const phone = String(form.get("phone")).trim();
 
 			const { error: sendError } =
 				await authClient.emailOtp.sendVerificationOtp({
@@ -49,7 +52,7 @@ function EmailStep({
 				);
 			}
 
-			onRequested({ email, name });
+			onRequested({ email, name, phone });
 			return null;
 		},
 		null
@@ -91,6 +94,21 @@ function EmailStep({
 						placeholder="you@example.com"
 						required
 						type="email"
+					/>
+				</Field>
+
+				<Field htmlFor="phone" label="Phone number">
+					<Input
+						autoComplete="tel"
+						className="h-10 text-sm"
+						disabled={pending}
+						id="phone"
+						inputMode="tel"
+						minLength={MIN_PHONE_DIGITS}
+						name="phone"
+						placeholder="+91 98765 43210"
+						required
+						type="tel"
 					/>
 				</Field>
 			</div>
@@ -143,6 +161,7 @@ function CodeStep({
 				email: requested.email,
 				name: requested.name,
 				otp,
+				phone: requested.phone,
 			});
 			if (verifyError) {
 				return (

@@ -54,6 +54,11 @@ export function createAuth() {
 			updateAge: SESSION_REFRESH_SECONDS,
 		},
 		trustedOrigins: [env.BETTER_AUTH_URL],
+		user: {
+			additionalFields: {
+				phone: { input: true, required: true, type: "string" },
+			},
+		},
 	});
 }
 
