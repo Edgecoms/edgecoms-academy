@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@edgecoms-academy/env": "workspace:*",
+    "@neondatabase/serverless": "^1.1.0",
     "dotenv": "catalog:",
     "drizzle-orm": "^0.45.2",
     "pg": "^8.22.0",
