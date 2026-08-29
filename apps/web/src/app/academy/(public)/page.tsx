@@ -12,7 +12,7 @@ const COURSE_SLUG = "shopify-ecommerce";
  * actually charged for this process, not an invented anchor. */
 const LIST_PRICE = "$999";
 
-const AUDIT_URL = "https://calendly.com/anurag-edgecoms/book-a-free-loom-audit";
+const AUDIT_URL = "https://calendly.com/anurag-edgecoms/book-a-free-call";
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/academy" },
