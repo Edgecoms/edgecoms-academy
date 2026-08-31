@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Play, Star, TrendingUp } from "lucide-react";
+import { ArrowRight, ExternalLink, Star, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
 export function SuccessStoriesSection() {
@@ -63,12 +63,14 @@ export function SuccessStoriesSection() {
 
 					{/* Headline */}
 					<h2 className="mt-8 font-extrabold text-3xl sm:text-5xl tracking-tight text-white leading-[1.14]">
-						We&apos;ve Helped Hundreds of Brands Like Yours and Want You to be Our Next Success Story
+						We&apos;ve Helped Hundreds of Brands Like Yours and Want You to be
+						Our Next Success Story
 					</h2>
 
 					{/* Subhead */}
 					<p className="mt-4 text-purple-200/85 text-sm sm:text-base leading-relaxed">
-						Join the hundreds of other founders who&apos;ve unlocked explosive growth inside Edgecoms Academy.
+						Join the hundreds of other founders who&apos;ve unlocked explosive
+						growth inside Edgecoms Academy.
 					</p>
 
 					{/* Yellow Action CTA Button */}
@@ -106,15 +108,18 @@ export function SuccessStoriesSection() {
 							</div>
 
 							<blockquote className="text-xs sm:text-sm font-medium text-purple-100/90 leading-relaxed italic">
-								&ldquo;Just ticked past our best month ever! Numbers up on last year too:
+								&ldquo;Just ticked past our best month ever! Numbers up on last
+								year too:
 								<br />
 								<span className="font-semibold text-white not-italic block mt-2">
-									• Sales: +355%<br />
-									• Traffic: +374%<br />
-									• Orders: +334%<br />
-									• AOV: +9% | COGS: -4%
+									• Sales: +355%
+									<br />• Traffic: +374%
+									<br />• Orders: +334%
+									<br />• AOV: +9% | COGS: -4%
 								</span>
-								<span className="block mt-1">All whilst maintaining target MER.&rdquo;</span>
+								<span className="block mt-1">
+									All whilst maintaining target MER.&rdquo;
+								</span>
 							</blockquote>
 
 							<div className="mt-5 flex items-center gap-3 border-t border-purple-800/40 pt-4">
@@ -125,36 +130,27 @@ export function SuccessStoriesSection() {
 								/>
 								<div>
 									<h3 className="font-bold text-sm text-white">James</h3>
-									<p className="text-xs text-purple-300/80">Cofounder of The Neighbors Cellar</p>
+									<p className="text-xs text-purple-300/80">
+										Cofounder of The Neighbors Cellar
+									</p>
 								</div>
 							</div>
 						</div>
 
-						{/* Video Testimonial 1 Preview */}
+						{/* Member Spotlight Card 1 */}
 						<div className="group relative overflow-hidden rounded-2xl border border-purple-800/40 bg-gradient-to-b from-[#240a43] to-[#150228] shadow-xl">
 							<div className="relative aspect-video overflow-hidden">
 								<img
-									alt="Video testimonial"
-									className="size-full object-cover grayscale contrast-110 opacity-80 group-hover:scale-105 transition-transform duration-500"
+									alt="Member operations snapshot"
+									className="size-full object-cover grayscale contrast-110 opacity-85 group-hover:scale-105 transition-transform duration-500"
 									src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80"
 								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-[#16032d] via-transparent to-black/30" />
-								
-								{/* Play Button */}
-								<div className="absolute inset-0 flex items-center justify-center">
-									<div className="flex size-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white shadow-lg transition-transform group-hover:scale-110">
-										<Play className="size-5 fill-white translate-x-0.5" />
-									</div>
-								</div>
-
-								{/* Duration Badge */}
-								<div className="absolute bottom-3 right-3 rounded bg-black/70 px-2 py-0.5 font-mono text-[10px] text-white">
-									03:16
-								</div>
+								<div className="absolute inset-0 bg-gradient-to-t from-[#16032d] via-transparent to-black/20" />
 							</div>
 							<div className="p-4">
 								<p className="font-semibold text-xs text-white">
-									🚨 &ldquo;This is what 12 months inside has done to our business&rdquo;
+									🚨 &ldquo;This is what 12 months inside has done to our
+									business&rdquo;
 								</p>
 							</div>
 						</div>
@@ -170,7 +166,13 @@ export function SuccessStoriesSection() {
 							</div>
 
 							<blockquote className="text-xs sm:text-sm font-medium text-purple-100/90 leading-relaxed italic">
-								&ldquo;Now with Black Friday officially over, very happy to share we&apos;ve <strong className="text-white not-italic font-bold">DOUBLED our 2023 Black Friday</strong>. Special thanks to the mentors for holding my hand the whole way and always being so responsive.&rdquo;
+								&ldquo;Now with Black Friday officially over, very happy to
+								share we&apos;ve{" "}
+								<strong className="text-white not-italic font-bold">
+									DOUBLED our 2023 Black Friday
+								</strong>
+								. Special thanks to the mentors for holding my hand the whole
+								way and always being so responsive.&rdquo;
 							</blockquote>
 
 							<div className="mt-5 flex items-center gap-3 border-t border-purple-800/40 pt-4">
@@ -193,9 +195,12 @@ export function SuccessStoriesSection() {
 						<div className="rounded-2xl border border-purple-800/40 bg-gradient-to-b from-[#240a43]/90 to-[#17032c]/95 p-5 shadow-xl backdrop-blur-md">
 							<div className="border-b border-purple-800/40 pb-3 mb-4">
 								<p className="text-xs font-semibold text-white">
-									&ldquo;First 6 fig day guys! Tyvm for helping us plan our business. The advice is golden.&rdquo;
+									&ldquo;First 6 fig day guys! Tyvm for helping us plan our
+									business. The advice is golden.&rdquo;
 								</p>
-								<span className="font-mono text-[10px] text-purple-300/70">Verified Member Win · analytics.png</span>
+								<span className="font-mono text-[10px] text-purple-300/70">
+									Verified Member Win · analytics.png
+								</span>
 							</div>
 
 							{/* Simulated Chart Container */}
@@ -203,17 +208,39 @@ export function SuccessStoriesSection() {
 								<div className="flex items-center justify-between">
 									<div className="flex items-center gap-2">
 										<TrendingUp className="size-4 text-emerald-400" />
-										<span className="font-bold text-emerald-400 text-sm">$108,492.14</span>
+										<span className="font-bold text-emerald-400 text-sm">
+											$108,492.14
+										</span>
 									</div>
-									<span className="font-mono text-[10px] text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">+412% vs last mo</span>
+									<span className="font-mono text-[10px] text-emerald-400 bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+										+412% vs last mo
+									</span>
 								</div>
 								{/* Stylized SVG Growth Curve */}
 								<div className="mt-4 h-28 w-full">
-									<svg className="size-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 40">
+									<svg
+										className="size-full overflow-visible"
+										preserveAspectRatio="none"
+										viewBox="0 0 100 40"
+									>
 										<defs>
-											<linearGradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
-												<stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-												<stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+											<linearGradient
+												id="chartGrad"
+												x1="0"
+												x2="0"
+												y1="0"
+												y2="1"
+											>
+												<stop
+													offset="0%"
+													stopColor="#38bdf8"
+													stopOpacity="0.4"
+												/>
+												<stop
+													offset="100%"
+													stopColor="#38bdf8"
+													stopOpacity="0"
+												/>
 											</linearGradient>
 										</defs>
 										<path
@@ -248,12 +275,23 @@ export function SuccessStoriesSection() {
 							</div>
 
 							<h4 className="font-bold text-xs sm:text-sm text-white mb-2">
-								&ldquo;Shoutout to the team for helping me structure my Facebook ad strategy!&rdquo;
+								&ldquo;Shoutout to the team for helping me structure my Facebook
+								ad strategy!&rdquo;
 							</h4>
 
 							<p className="text-[11px] sm:text-xs text-purple-200/80 leading-relaxed space-y-2">
-								<span>We had our <strong>BIGGEST month in June</strong> after one year of virtually no growth. 🎉 <strong>40% revenue gains in month #1</strong> of implementing the playbook! No promos, no extra discounts. Everything the same, only ad strategy and product offer changed.</span>
-								<span className="block mt-2">The best part is the ad accounts performed so well that I didn&apos;t have to touch them for 5 entire weeks while on holiday with my family. Truly life-changing!</span>
+								<span>
+									We had our <strong>BIGGEST month in June</strong> after one
+									year of virtually no growth. 🎉{" "}
+									<strong>40% revenue gains in month #1</strong> of implementing
+									the playbook! No promos, no extra discounts. Everything the
+									same, only ad strategy and product offer changed.
+								</span>
+								<span className="block mt-2">
+									The best part is the ad accounts performed so well that I
+									didn&apos;t have to touch them for 5 entire weeks while on
+									holiday with my family. Truly life-changing!
+								</span>
 							</p>
 						</div>
 					</div>
@@ -271,7 +309,9 @@ export function SuccessStoriesSection() {
 							</div>
 
 							<blockquote className="text-xs sm:text-sm font-medium text-purple-100/90 leading-relaxed italic">
-								&ldquo;I was struggling to find the right place for me in the ecom world, but I&apos;ve found that within Edgecoms Academy.&rdquo;
+								&ldquo;I was struggling to find the right place for me in the
+								ecom world, but I&apos;ve found that within Edgecoms
+								Academy.&rdquo;
 							</blockquote>
 
 							<div className="mt-5 flex items-center gap-3 border-t border-purple-800/40 pt-4">
@@ -282,7 +322,9 @@ export function SuccessStoriesSection() {
 								/>
 								<div>
 									<h3 className="font-bold text-sm text-white">Gemma</h3>
-									<p className="text-xs text-purple-300/80">Founder of Luscious Living Co</p>
+									<p className="text-xs text-purple-300/80">
+										Founder of Luscious Living Co
+									</p>
 								</div>
 							</div>
 						</div>
@@ -299,7 +341,8 @@ export function SuccessStoriesSection() {
 							</ul>
 
 							<blockquote className="text-xs text-purple-200/90 leading-relaxed italic border-t border-purple-800/40 pt-3">
-								&ldquo;...from operating out of our parents&apos; garage to moving into the 2-story warehouse we&apos;re in now.&rdquo;
+								&ldquo;...from operating out of our parents&apos; garage to
+								moving into the 2-story warehouse we&apos;re in now.&rdquo;
 							</blockquote>
 
 							<div className="mt-4 flex items-center gap-3">
@@ -310,36 +353,27 @@ export function SuccessStoriesSection() {
 								/>
 								<div>
 									<h3 className="font-bold text-xs text-white">George</h3>
-									<p className="text-[10px] text-purple-300/80">Cofounder of The Neighbors Cellar</p>
+									<p className="text-[10px] text-purple-300/80">
+										Cofounder of The Neighbors Cellar
+									</p>
 								</div>
 							</div>
 						</div>
 
-						{/* Video Testimonial 2 Preview */}
+						{/* Member Spotlight Card 2 */}
 						<div className="group relative overflow-hidden rounded-2xl border border-purple-800/40 bg-gradient-to-b from-[#240a43] to-[#150228] shadow-xl">
 							<div className="relative aspect-video overflow-hidden">
 								<img
-									alt="Video testimonial"
-									className="size-full object-cover grayscale contrast-110 opacity-80 group-hover:scale-105 transition-transform duration-500"
+									alt="Warehouse and operations expansion"
+									className="size-full object-cover grayscale contrast-110 opacity-85 group-hover:scale-105 transition-transform duration-500"
 									src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&auto=format&fit=crop&q=80"
 								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-[#16032d] via-transparent to-black/30" />
-								
-								{/* Play Button */}
-								<div className="absolute inset-0 flex items-center justify-center">
-									<div className="flex size-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white shadow-lg transition-transform group-hover:scale-110">
-										<Play className="size-5 fill-white translate-x-0.5" />
-									</div>
-								</div>
-
-								{/* Duration Badge */}
-								<div className="absolute bottom-3 right-3 rounded bg-black/70 px-2 py-0.5 font-mono text-[10px] text-white">
-									02:08
-								</div>
+								<div className="absolute inset-0 bg-gradient-to-t from-[#16032d] via-transparent to-black/20" />
 							</div>
 							<div className="p-4">
 								<p className="font-semibold text-xs text-white">
-									📦 &ldquo;How we scaled from zero to our first 2-story warehouse&rdquo;
+									📦 &ldquo;How we scaled from zero to our first 2-story
+									warehouse&rdquo;
 								</p>
 							</div>
 						</div>
