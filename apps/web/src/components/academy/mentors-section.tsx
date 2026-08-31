@@ -39,24 +39,19 @@ const MENTORS: Mentor[] = [
 
 const STATS = [
 	{
-		label: "In Combined Shopify Sales",
-		number: "$2+",
-		unit: "Billion",
-	},
-	{
-		label: "Units Collectively Sold",
-		number: "50+",
+		label: "In Combined DTC Sales",
+		number: "$10+",
 		unit: "Million",
 	},
 	{
-		label: "Collectively Spent on Ads",
-		number: "$400+",
-		unit: "Million",
-	},
-	{
-		label: "In Combined Ecom Experience",
+		label: "Orders Delivered Globally",
 		number: "150+",
-		unit: "Years",
+		unit: "Thousand",
+	},
+	{
+		label: "Spent on Meta Ads",
+		number: "$2+",
+		unit: "Million",
 	},
 ];
 
@@ -136,8 +131,8 @@ export function MentorsSection() {
 					</Link>
 				</div>
 
-				{/* Big 4 Stats Row */}
-				<div className="mt-16 sm:mt-20 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-4 sm:gap-6 lg:gap-8 border-y border-border/60 py-10 sm:py-14">
+				{/* 3 Stats Row */}
+				<div className="mt-16 sm:mt-20 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-6 sm:gap-8 border-y border-border/60 py-10 sm:py-14">
 					{STATS.map((stat) => (
 						<div
 							className="flex flex-col items-center text-center px-2"

@@ -416,11 +416,11 @@ export function FeaturesShowcaseSection() {
 							</span>
 							<h3 className="font-extrabold text-2xl sm:text-4xl tracking-tight text-white leading-tight">
 								Copy and Paste the Strategies We&apos;re Actively Using to Scale
-								$100M+ Brands
+								7-Figure Brands
 							</h3>
 							<p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-								Unlock access to SOPs, templates, training videos, and resources
-								that we&apos;re using inside of 9 figure brands.
+								Unlock access to SOPs, frameworks, training videos, and
+								resources that we use inside our own ecommerce brands.
 							</p>
 						</div>
 
