@@ -395,22 +395,22 @@ export function FeaturesShowcaseSection() {
 				</div>
 
 				{/* ------------------------------------------------------------- */}
-				{/* PART 5: TWO SPLIT CARDS (Templates + 400+ Videos)             */}
+				{/* PART 5: TWO SPLIT CARDS (Strategies + 17 Lessons / 3 Modules) */}
 				{/* ------------------------------------------------------------- */}
 				<div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-					{/* Card 1: Plug-n-Play Templates */}
+					{/* Card 1: Battle-Tested Strategies */}
 					<div className="rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between transition-all hover:border-purple-500/40">
 						<div>
 							<div className="flex size-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 mb-4">
 								<Lightbulb className="size-5" />
 							</div>
 							<h4 className="font-bold text-lg sm:text-xl text-foreground">
-								Steal Plug-n-Play Templates
+								Battle-Tested Growth Strategies
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								Copy/paste the sheets and templates we use inside our own brands
-								and see an immediate impact to your brand&apos;s growth and
-								profitability.
+								Learn the exact operating frameworks and growth strategies we
+								use to find winning products, build high-converting Shopify
+								stores, and scale profitably.
 							</p>
 						</div>
 
@@ -419,41 +419,45 @@ export function FeaturesShowcaseSection() {
 							<div className="grid grid-cols-2 gap-3">
 								<div className="rounded-xl border border-border/70 bg-card p-3 shadow-xs">
 									<p className="font-mono text-[10px] font-semibold text-primary uppercase">
-										Ad Creative Sheet
+										Validation Strategy
+									</p>
+									<p className="mt-1 text-xs font-bold text-foreground">
+										Sell First, Buy Second
 									</p>
 									<div className="mt-2 space-y-1">
-										<div className="h-2 w-full rounded bg-muted animate-pulse" />
-										<div className="h-2 w-4/5 rounded bg-muted animate-pulse" />
-										<div className="h-2 w-3/5 rounded bg-muted animate-pulse" />
+										<div className="h-1.5 w-full rounded bg-primary/20" />
+										<div className="h-1.5 w-4/5 rounded bg-muted" />
 									</div>
 								</div>
 								<div className="rounded-xl border border-border/70 bg-card p-3 shadow-xs">
 									<p className="font-mono text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase">
-										Unit Economics OS
+										Scale Strategy
+									</p>
+									<p className="mt-1 text-xs font-bold text-foreground">
+										Meta Ads Architecture
 									</p>
 									<div className="mt-2 space-y-1">
-										<div className="h-2 w-full rounded bg-muted animate-pulse" />
-										<div className="h-2 w-3/4 rounded bg-muted animate-pulse" />
-										<div className="h-2 w-1/2 rounded bg-muted animate-pulse" />
+										<div className="h-1.5 w-full rounded bg-emerald-500/20" />
+										<div className="h-1.5 w-3/4 rounded bg-muted" />
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Card 2: 400+ Training Videos */}
+					{/* Card 2: 17 Lessons Across 3 Modules */}
 					<div className="rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between transition-all hover:border-purple-500/40">
 						<div>
 							<div className="flex size-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 mb-4">
 								<Brain className="size-5" />
 							</div>
 							<h4 className="font-bold text-lg sm:text-xl text-foreground">
-								Learn All of Our Tactics from 400+ Training Videos
+								17 Actionable Lessons Across 3 Core Modules
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								From structuring ad accounts, building offers, international
-								expansion, and more. You&apos;ll unlock our extensive 400+ video
-								library of step-by-step video tutorials and SOPs.
+								From product research and high-converting store setup to
+								profitable Meta Ads. Master the complete system across 3 focused
+								modules and 17 step-by-step video lessons.
 							</p>
 						</div>
 
@@ -466,11 +470,11 @@ export function FeaturesShowcaseSection() {
 										<span className="size-2 rounded-full bg-amber-400" />
 										<span className="size-2 rounded-full bg-emerald-400" />
 										<span className="ml-2 font-mono text-[10px] text-muted-foreground">
-											SOP: Meta Ad Strategy
+											Course: Shopify &amp; DTC Growth
 										</span>
 									</div>
 									<span className="font-mono text-[10px] font-bold text-primary">
-										+ 400 more
+										17 Lessons
 									</span>
 								</div>
 								<div className="mt-2.5 flex items-center gap-3">
@@ -479,10 +483,10 @@ export function FeaturesShowcaseSection() {
 									</div>
 									<div className="min-w-0 flex-1">
 										<p className="font-semibold text-xs text-foreground truncate">
-											Mastering Creative Testing &amp; Horizontal Scaling
+											Shopify Ecommerce: Zero to Scale
 										</p>
 										<p className="text-[10px] text-muted-foreground font-mono">
-											14 Modules · Updated Weekly
+											3 Core Modules · 17 Actionable Lessons
 										</p>
 									</div>
 								</div>
