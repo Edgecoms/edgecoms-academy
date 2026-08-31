@@ -26,24 +26,21 @@ const MENTORS: Mentor[] = [
 		role: "Creative Mentor",
 	},
 	{
-		highlight:
-			"10+ Yrs Of Experience Scaling Ad Accounts From <$100K - $500K+",
+		highlight: "10+ Yrs Of Experience Scaling Ad Accounts From <$100K - $500K+",
 		image:
 			"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=80",
 		name: "Nick Melcher",
 		role: "Facebook Ads Mentor",
 	},
 	{
-		highlight:
-			"Founder of Imprint Genius, Sourcing Agency Running 7+ Yrs",
+		highlight: "Founder of Imprint Genius, Sourcing Agency Running 7+ Yrs",
 		image:
 			"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80",
 		name: "Isaac Hetzroni",
 		role: "Sourcing & Product Mentor",
 	},
 	{
-		highlight:
-			"Former CFO & COO of Guardian Bikes (Mark Cuban company)",
+		highlight: "Former CFO & COO of Guardian Bikes (Mark Cuban company)",
 		image:
 			"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=80",
 		name: "Marcus Vance",
@@ -62,19 +59,23 @@ const MENTORS: Mentor[] = [
 const STATS = [
 	{
 		label: "In Combined Shopify Sales",
-		value: "$2+ Billion",
+		number: "$2+",
+		unit: "Billion",
 	},
 	{
 		label: "Units Collectively Sold",
-		value: "50+ Million",
+		number: "50+",
+		unit: "Million",
 	},
 	{
 		label: "Collectively Spent on Ads",
-		value: "$400+ Million",
+		number: "$400+",
+		unit: "Million",
 	},
 	{
 		label: "In Combined Ecom Experience",
-		value: "150+ Years",
+		number: "150+",
+		unit: "Years",
 	},
 ];
 
@@ -102,9 +103,9 @@ export function MentorsSection() {
 						</span>
 					</h2>
 					<p className="mt-5 text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-						Edgecoms Academy gives brands direct eCommerce mentorship from $100M+
-						founders and subject matter experts inside a community of other elite
-						brands.
+						Edgecoms Academy gives brands direct eCommerce mentorship from
+						$100M+ founders and subject matter experts inside a community of
+						other elite brands.
 					</p>
 				</div>
 
@@ -156,11 +157,17 @@ export function MentorsSection() {
 				</div>
 
 				{/* Big 4 Stats Row */}
-				<div className="mt-16 sm:mt-20 grid grid-cols-2 gap-8 sm:grid-cols-4 border-y border-border/60 py-10 sm:py-12">
+				<div className="mt-16 sm:mt-20 grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-4 sm:gap-6 lg:gap-8 border-y border-border/60 py-10 sm:py-14">
 					{STATS.map((stat) => (
-						<div className="flex flex-col items-center" key={stat.label}>
-							<span className="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent tabular-nums">
-								{stat.value}
+						<div
+							className="flex flex-col items-center text-center px-2"
+							key={stat.label}
+						>
+							<span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent tabular-nums leading-none">
+								{stat.number}
+							</span>
+							<span className="mt-1.5 font-bold text-lg sm:text-xl lg:text-2xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent">
+								{stat.unit}
 							</span>
 							<span className="mt-2 text-xs sm:text-sm font-medium text-muted-foreground">
 								{stat.label}
