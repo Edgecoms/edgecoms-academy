@@ -12,47 +12,28 @@ interface Mentor {
 
 const MENTORS: Mentor[] = [
 	{
-		highlight: "Top 8-Figure Shopify Founder with $50M+ Lifetime Sales",
+		highlight:
+			"Scaling DTC brands from zero to 7-figures through high-converting store architecture and product validation.",
 		image:
-			"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80",
-		name: "Zeeshan M.",
-		role: "Ecom Growth Mentor",
-	},
-	{
-		highlight: "7+ Years Fractional CMO With $200M+ Generated Globally",
-		image:
-			"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80",
-		name: "Alex Myatt",
-		role: "Creative Mentor",
-	},
-	{
-		highlight: "10+ Yrs Of Experience Scaling Ad Accounts From <$100K - $500K+",
-		image:
-			"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=80",
-		name: "Nick Melcher",
-		role: "Facebook Ads Mentor",
-	},
-	{
-		highlight: "Founder of Imprint Genius, Sourcing Agency Running 7+ Yrs",
-		image:
-			"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80",
-		name: "Isaac Hetzroni",
-		role: "Sourcing & Product Mentor",
-	},
-	{
-		highlight: "Former CFO & COO of Guardian Bikes (Mark Cuban company)",
-		image:
-			"https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&auto=format&fit=crop&q=80",
-		name: "Marcus Vance",
-		role: "Operations & Finance",
+			"https://media.licdn.com/dms/image/v2/D4D03AQFncQt3OloZ-A/profile-displayphoto-scale_400_400/B4DZ.3bwFVKAAk-/0/1785488934854?e=1789603200&v=beta&t=R95P7JWgl-ROqSvCvY0s3035EIyukrNW7cgzfn8FtRE",
+		name: "Anurag",
+		role: "Ecom Growth & Strategy",
 	},
 	{
 		highlight:
-			"Prev. Head of Operations @ Gymshark, scaling global fulfillment",
+			"Specialist in high-converting ad creatives, store architecture, brand positioning, and CRO systems.",
 		image:
-			"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80",
-		name: "Sarah Chen",
-		role: "Supply Chain Leader",
+			"https://media.licdn.com/dms/image/v2/D5603AQEwgeHktU-ZYw/profile-displayphoto-crop_800_800/B56Z584HaYK4AI-/0/1780211547226?e=1789603200&v=beta&t=XwgIFgisBd-UvblRySaUS6eOot4apCa-2JVDk0vAUb8",
+		name: "Avinash",
+		role: "Creative Strategy & CRO",
+	},
+	{
+		highlight:
+			"Meta Ads scaling specialist, media buying architecture, and profitable customer acquisition systems.",
+		image:
+			"https://media.licdn.com/dms/image/v2/D5603AQEEkS4yPwBxug/profile-displayphoto-shrink_800_800/B56ZaSMRkOHAAc-/0/1746209415394?e=1789603200&v=beta&t=u7J3VIXNIg6BCsBsbpm0uclCeqQ7DYWO7SuMObdNOIo",
+		name: "Medha",
+		role: "Paid Media & Meta Ads",
 	},
 ];
 
@@ -104,36 +85,35 @@ export function MentorsSection() {
 					</h2>
 					<p className="mt-5 text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
 						Edgecoms Academy gives brands direct eCommerce mentorship from
-						$100M+ founders and subject matter experts inside a community of
-						other elite brands.
+						experienced founders and operators inside an elite community.
 					</p>
 				</div>
 
-				{/* Mentors Cards Grid / Horizontal Scroll */}
-				<div className="mt-12 sm:mt-16 -mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto pb-4 pt-2 [scrollbar-width:none] [-ms-overflow-style:none]">
-					<div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 min-w-max sm:min-w-0">
+				{/* Mentors Cards Grid (3-column layout) */}
+				<div className="mt-12 sm:mt-16 mx-auto max-w-4xl">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 						{MENTORS.map((mentor) => (
 							<div
-								className="group relative flex h-80 w-60 sm:w-auto flex-col justify-end overflow-hidden rounded-2xl border border-purple-800/30 dark:border-purple-800/40 bg-gradient-to-b from-[#2a0c4e] to-[#16042a] p-4 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/50 hover:shadow-purple-950/30"
+								className="group relative flex h-88 sm:h-96 flex-col justify-end overflow-hidden rounded-2xl border border-purple-800/30 dark:border-purple-800/40 bg-gradient-to-b from-[#2a0c4e] to-[#16042a] p-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/60 hover:shadow-purple-950/40"
 								key={mentor.name}
 							>
 								{/* Mentor Image with gradient mesh & duotone */}
 								<img
 									alt={mentor.name}
-									className="absolute inset-0 size-full object-cover grayscale contrast-110 opacity-75 transition-all duration-500 group-hover:scale-105 group-hover:opacity-90 mix-blend-luminosity"
+									className="absolute inset-0 size-full object-cover object-top grayscale contrast-110 opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-95 mix-blend-luminosity"
 									src={mentor.image}
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-[#140226] via-[#1c0638]/70 to-transparent" />
 
 								{/* Content info overlay */}
 								<div className="relative z-10">
-									<h3 className="font-bold text-base text-white tracking-tight">
+									<h3 className="font-bold text-lg text-white tracking-tight">
 										{mentor.name}
 									</h3>
-									<p className="text-purple-300 font-medium text-xs mt-0.5">
+									<p className="text-purple-300 font-semibold text-xs mt-0.5">
 										{mentor.role}
 									</p>
-									<p className="mt-2 text-[11px] text-purple-200/80 line-clamp-2 leading-relaxed">
+									<p className="mt-2 text-xs text-purple-200/85 leading-relaxed">
 										{mentor.highlight}
 									</p>
 								</div>
@@ -145,7 +125,7 @@ export function MentorsSection() {
 				{/* Mentors Subtext & Link */}
 				<div className="mt-8 flex flex-col items-center gap-2">
 					<p className="text-muted-foreground text-xs sm:text-sm font-medium">
-						26 Eight and Nine Figure Ecom Founders and Subject Matter Experts
+						Direct 1-on-1 access to our dedicated mentors and operators
 					</p>
 					<Link
 						className="inline-flex items-center gap-1 font-semibold text-xs sm:text-sm text-primary hover:underline underline-offset-4"
