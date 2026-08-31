@@ -139,22 +139,48 @@ export function AcademyHero({
 					<p className="font-mono text-[11px] uppercase tracking-widest text-purple-200/50 mb-6">
 						Proven systems powering high-growth direct-to-consumer brands
 					</p>
-					<div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12 opacity-75 grayscale contrast-125 transition-opacity hover:opacity-95">
-						{BRAND_LOGOS.map((brand) => (
-							<span
-								className={`${brand.style} text-white/85 select-none transition-colors hover:text-white`}
-								key={brand.name}
+					<div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+						<div className="flex w-max animate-marquee py-2 opacity-75 grayscale contrast-125 transition-opacity hover:opacity-95">
+							{/* Group 1 */}
+							<div className="flex shrink-0 items-center justify-around gap-10 sm:gap-14 pr-10 sm:pr-14">
+								{BRAND_LOGOS.map((brand) => (
+									<span
+										className={`${brand.style} text-white/85 select-none transition-colors hover:text-white shrink-0`}
+										key={brand.name}
+									>
+										{brand.name === "DAILYPUZZLES" ? (
+											<>
+												<span className="inline-flex size-3.5 bg-gradient-to-br from-amber-400 via-rose-500 to-cyan-400 rounded-xs" />
+												<span>DAILYPUZZLES</span>
+											</>
+										) : (
+											brand.name
+										)}
+									</span>
+								))}
+							</div>
+							{/* Group 2 (identical duplicate for seamless infinite loop) */}
+							<div
+								aria-hidden="true"
+								className="flex shrink-0 items-center justify-around gap-10 sm:gap-14 pr-10 sm:pr-14"
 							>
-								{brand.name === "DAILYPUZZLES" ? (
-									<>
-										<span className="inline-flex size-3.5 bg-gradient-to-br from-amber-400 via-rose-500 to-cyan-400 rounded-xs" />
-										<span>DAILYPUZZLES</span>
-									</>
-								) : (
-									brand.name
-								)}
-							</span>
-						))}
+								{BRAND_LOGOS.map((brand, idx) => (
+									<span
+										className={`${brand.style} text-white/85 select-none transition-colors hover:text-white shrink-0`}
+										key={`${brand.name}-duplicate-${idx}`}
+									>
+										{brand.name === "DAILYPUZZLES" ? (
+											<>
+												<span className="inline-flex size-3.5 bg-gradient-to-br from-amber-400 via-rose-500 to-cyan-400 rounded-xs" />
+												<span>DAILYPUZZLES</span>
+											</>
+										) : (
+											brand.name
+										)}
+									</span>
+								))}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
