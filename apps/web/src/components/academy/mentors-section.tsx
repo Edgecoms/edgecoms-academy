@@ -184,7 +184,7 @@ export function MentorsSection() {
 							<img
 								alt="Fameez, co-founder of OTAA"
 								className="size-14 sm:size-16 shrink-0 rounded-full border-2 border-purple-500/40 object-cover shadow-md"
-								src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80"
+								src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&auto=format&fit=crop&q=80"
 							/>
 							<div className="flex-1 min-w-0">
 								{/* 5 Stars */}

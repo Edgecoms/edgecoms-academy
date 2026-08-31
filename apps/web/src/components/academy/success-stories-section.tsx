@@ -24,7 +24,7 @@ export function SuccessStoriesSection() {
 							<img
 								alt="Member avatar"
 								className="inline-block size-6 sm:size-7 rounded-full border-2 border-purple-900 object-cover"
-								src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+								src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80"
 							/>
 							<img
 								alt="Member avatar"
@@ -34,7 +34,7 @@ export function SuccessStoriesSection() {
 							<img
 								alt="Member avatar"
 								className="inline-block size-6 sm:size-7 rounded-full border-2 border-purple-900 object-cover"
-								src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80"
+								src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80"
 							/>
 							<img
 								alt="Member avatar"
@@ -177,7 +177,7 @@ export function SuccessStoriesSection() {
 								<img
 									alt="Isabella"
 									className="size-10 rounded-full border border-purple-500/40 object-cover"
-									src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+									src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80"
 								/>
 								<div>
 									<h3 className="font-bold text-sm text-white">Isabella</h3>

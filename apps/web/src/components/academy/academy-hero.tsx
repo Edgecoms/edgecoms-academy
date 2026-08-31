@@ -46,7 +46,7 @@ export function AcademyHero({
 						<img
 							alt="Founder avatar"
 							className="inline-block size-7 rounded-full border-2 border-purple-900 object-cover"
-							src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+							src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&auto=format&fit=crop&q=80"
 						/>
 						<img
 							alt="Founder avatar"
@@ -56,7 +56,7 @@ export function AcademyHero({
 						<img
 							alt="Founder avatar"
 							className="inline-block size-7 rounded-full border-2 border-purple-900 object-cover"
-							src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80"
+							src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&auto=format&fit=crop&q=80"
 						/>
 						<img
 							alt="Founder avatar"

@@ -113,15 +113,15 @@ export function FeaturesShowcaseSection() {
 								<div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-purple-950">
 									<img
 										alt="Mentor Video Call"
-										className="size-full object-cover object-top opacity-90"
-										src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80"
+										className="size-full object-cover object-center opacity-95"
+										src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
 									/>
 									{/* Small Picture-in-Picture */}
 									<div className="absolute top-3 left-3 size-16 sm:size-20 overflow-hidden rounded-lg border border-white/30 bg-purple-900 shadow-md">
 										<img
 											alt="Student in call"
-											className="size-full object-cover"
-											src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80"
+											className="size-full object-cover object-center"
+											src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&auto=format&fit=crop&q=80"
 										/>
 									</div>
 									{/* Call Controls Bar */}
