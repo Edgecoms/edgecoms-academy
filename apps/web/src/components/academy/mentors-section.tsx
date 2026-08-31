@@ -12,7 +12,7 @@ interface Mentor {
 
 const MENTORS: Mentor[] = [
 	{
-		highlight: "Top Amazon & Shopify Founder with $50M+ Lifetime Sales",
+		highlight: "Top 8-Figure Shopify Founder with $50M+ Lifetime Sales",
 		image:
 			"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80",
 		name: "Zeeshan M.",
