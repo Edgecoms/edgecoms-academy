@@ -114,7 +114,7 @@ export function FeaturesShowcaseSection() {
 									<img
 										alt="Mentor Video Call"
 										className="size-full object-cover object-center opacity-95"
-										src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80"
+										src="https://media.licdn.com/dms/image/v2/D4D03AQFncQt3OloZ-A/profile-displayphoto-scale_400_400/B4DZ.3bwFVKAAk-/0/1785488934854?e=1789603200&v=beta&t=R95P7JWgl-ROqSvCvY0s3035EIyukrNW7cgzfn8FtRE"
 									/>
 									{/* Small Picture-in-Picture */}
 									<div className="absolute top-3 left-3 size-16 sm:size-20 overflow-hidden rounded-lg border border-white/30 bg-purple-900 shadow-md">
