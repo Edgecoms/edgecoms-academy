@@ -37,18 +37,69 @@ const TOPICS = [
 ];
 
 const RESOURCE_CARDS = [
-	{ name: "Brand Strategy", tag: "STRATEGY" },
-	{ name: "Scale Masterclass", tag: "SCALING" },
-	{ name: "TikTok Ads", tag: "TRAFFIC" },
-	{ name: "Customer CX", tag: "RETENTION" },
-	{ name: "CRO 101", tag: "CONVERSION" },
-	{ name: "Operations", tag: "LOGISTICS" },
-	{ name: "Facebook Ads", tag: "META" },
-	{ name: "Email Marketing", tag: "KLAVIYO" },
-	{ name: "Product Launch", tag: "SOURCING" },
-	{ name: "Finance & Tax", tag: "FINANCE" },
-	{ name: "BFCM Playbook", tag: "Q4 SCALE" },
-	{ name: "Ad Creative OS", tag: "CREATIVE" },
+	{
+		duration: "14m",
+		image:
+			"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&auto=format&fit=crop&q=80",
+		name: "Product Validation Framework",
+		tag: "RESEARCH",
+	},
+	{
+		duration: "18m",
+		image:
+			"https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&auto=format&fit=crop&q=80",
+		name: "Shopify Store Architecture",
+		tag: "SHOPIFY",
+	},
+	{
+		duration: "22m",
+		image:
+			"https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&auto=format&fit=crop&q=80",
+		name: "Meta Ads Scaling Blueprint",
+		tag: "META ADS",
+	},
+	{
+		duration: "16m",
+		image:
+			"https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&auto=format&fit=crop&q=80",
+		name: "High-Converting UGC Creative",
+		tag: "CREATIVE",
+	},
+	{
+		duration: "12m",
+		image:
+			"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80",
+		name: "Offer Strategy & Bundling",
+		tag: "CONVERSION",
+	},
+	{
+		duration: "20m",
+		image:
+			"https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&auto=format&fit=crop&q=80",
+		name: "Creative Testing Matrix",
+		tag: "TESTING",
+	},
+	{
+		duration: "15m",
+		image:
+			"https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&auto=format&fit=crop&q=80",
+		name: "High-Converting Landing Pages",
+		tag: "CRO",
+	},
+	{
+		duration: "25m",
+		image:
+			"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=80",
+		name: "Unit Economics & Profit Margin",
+		tag: "FINANCE",
+	},
+	{
+		duration: "19m",
+		image:
+			"https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=80",
+		name: "BFCM & Q4 Scale Playbook",
+		tag: "SCALING",
+	},
 ];
 
 export function FeaturesShowcaseSection() {
@@ -373,20 +424,48 @@ export function FeaturesShowcaseSection() {
 							</p>
 						</div>
 
-						{/* Visual Grid of Resource Cards */}
+						{/* Visual Grid of Resource Cards with Video Thumbnail Hover */}
 						<div className="lg:col-span-6">
-							<div className="grid grid-cols-3 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl bg-black/40 border border-purple-500/20 backdrop-blur-xl">
+							<div className="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 rounded-2xl bg-black/50 border border-purple-500/20 backdrop-blur-xl">
 								{RESOURCE_CARDS.map((res) => (
 									<div
-										className="rounded-xl border border-purple-700/40 bg-gradient-to-b from-purple-900/60 to-purple-950 p-2.5 text-center shadow-xs transition-transform hover:scale-105"
+										className="group relative flex h-28 flex-col justify-between overflow-hidden rounded-xl border border-purple-700/30 bg-gradient-to-b from-[#250a44] to-[#120224] p-3 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-950/50 cursor-pointer select-none"
 										key={res.name}
 									>
-										<span className="font-mono text-[8px] uppercase tracking-wider text-purple-300 font-bold block mb-1">
-											{res.tag}
-										</span>
-										<p className="font-semibold text-[11px] text-white leading-tight">
-											{res.name}
-										</p>
+										{/* Video Thumbnail Image (blooms on hover) */}
+										<img
+											alt={res.name}
+											className="absolute inset-0 size-full object-cover grayscale opacity-25 transition-all duration-500 group-hover:scale-110 group-hover:opacity-75 group-hover:grayscale-0"
+											src={res.image}
+										/>
+
+										{/* Default dark overlay & light greying hover overlay */}
+										<div className="absolute inset-0 bg-gradient-to-t from-[#140226]/95 via-[#1c0638]/70 to-[#140226]/40 transition-opacity duration-300 group-hover:opacity-0" />
+										<div className="absolute inset-0 bg-gradient-to-t from-black/85 via-slate-900/60 to-slate-800/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[1px]" />
+
+										{/* Top Row: Tag & Duration Badge */}
+										<div className="relative z-10 flex items-center justify-between">
+											<span className="font-mono text-[8px] uppercase tracking-wider text-purple-300 font-bold px-1.5 py-0.5 rounded bg-purple-950/80 border border-purple-500/30 group-hover:border-purple-400/50 group-hover:text-amber-300 transition-colors">
+												{res.tag}
+											</span>
+											<span className="font-mono text-[9px] text-purple-200/70 group-hover:text-white font-medium transition-colors">
+												{res.duration}
+											</span>
+										</div>
+
+										{/* Center Play Button on Hover */}
+										<div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
+											<div className="flex size-7 items-center justify-center rounded-full bg-white/25 backdrop-blur-md border border-white/50 text-white shadow-md">
+												<Play className="size-3.5 fill-white translate-x-0.5" />
+											</div>
+										</div>
+
+										{/* Bottom Row: Name */}
+										<div className="relative z-10">
+											<p className="font-semibold text-[11px] text-white leading-snug line-clamp-2 group-hover:text-purple-100 transition-colors">
+												{res.name}
+											</p>
+										</div>
 									</div>
 								))}
 							</div>
