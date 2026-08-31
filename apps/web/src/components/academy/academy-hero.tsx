@@ -23,7 +23,7 @@ export function AcademyHero({
 	totalModules,
 }: AcademyHeroProps) {
 	return (
-		<section className="relative overflow-hidden bg-gradient-to-b from-hero-bg-from via-hero-bg-via to-hero-bg-to text-hero-foreground py-20 sm:py-28 md:py-32">
+		<section className="relative overflow-hidden bg-gradient-to-b from-hero-bg-from via-hero-bg-via to-hero-bg-to text-hero-foreground pt-10 sm:pt-14 md:pt-16 pb-20 sm:pb-28">
 			{/* Ambient Purple Glow */}
 			<div
 				aria-hidden="true"
@@ -116,7 +116,7 @@ export function AcademyHero({
 
 				{/* CTA Section */}
 				<div
-					className="rise mt-8 flex flex-col items-center gap-3.5"
+					className="rise mt-8 flex flex-col items-center gap-6"
 					style={{ animationDelay: "180ms" }}
 				>
 					<Link
