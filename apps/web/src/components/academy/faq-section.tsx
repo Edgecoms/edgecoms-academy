@@ -17,23 +17,24 @@ const FAQS: FAQItem[] = [
 	},
 	{
 		answer:
-			"Edgecoms Academy is built for ambitious founders starting their first ecommerce business who want an unbroken, chronological roadmap—as well as existing brand owners who are stuck and want to diagnose why their store isn't converting or their ads aren't scaling.",
+			"Edgecoms Academy is built for two types of founders. First, aspiring entrepreneurs looking to start their first ecommerce store with a structured, step-by-step roadmap. Second, existing store owners who want to diagnose bottlenecks, fix low conversion rates, and scale their Meta Ads profitably.",
 		question: "Who Are We For?",
 	},
 	{
 		answer:
-			"Most students complete the 3 core modules within 1 to 2 weeks of dedicated study and implementation. Because the model allows you to validate demand with zero upfront inventory risk, you can have your store live and running your first Meta Ad campaign within days.",
+			"Most students complete the 3 core modules within 1 to 2 weeks of dedicated study and implementation. Because our frameworks focus on validating product demand before investing in inventory, you can have your Shopify store live and your first Meta Ads campaign running within days.",
 		question: "How Long Will It Take to See Results?",
 	},
 	{
 		answer:
-			"Yes. In addition to the comprehensive video lessons, SOPs, and financial templates, you can book free 1-on-1 store audits with our senior operators and access our member resources.",
+			"Yes. In addition to the step-by-step lessons and frameworks, you get direct mentorship through our private Discord channel and 1-on-1 growth sessions with our founders and senior operators.",
 		question: "Will I Have Direct Access to the Mentors?",
 	},
 	{
 		answer:
-			"Most 'gurus' charge $2,000 to $10,000 for recycled courses or use free content as a teaser funnel. Edgecoms Academy gives away the complete, unbroken operating playbook for free—the exact systems we execute for our 7-figure agency clients—with zero upsells or hidden paywalls.",
-		question: "What Makes Edgecoms Academy Different from Other Coaching Programs?",
+			"Most traditional coaching programs charge thousands of dollars for generic courses or hide their best content behind high-ticket paywalls. Edgecoms Academy provides our complete, end-to-end operating playbook for free. These are the exact systems and frameworks we use to launch and scale 7-figure DTC brands.",
+		question:
+			"What Makes Edgecoms Academy Different from Other Coaching Programs?",
 	},
 	{
 		answer:
@@ -70,14 +71,21 @@ export function FAQSection() {
 					{FAQS.map((faq, index) => {
 						const isOpen = openIndex === index;
 						return (
-							<div className="py-5 sm:py-6 transition-colors" key={faq.question}>
+							<div
+								className="py-5 sm:py-6 transition-colors"
+								key={faq.question}
+							>
 								<button
 									aria-expanded={isOpen}
 									className="flex w-full items-center justify-between gap-4 text-left font-semibold text-base sm:text-lg text-foreground hover:text-purple-600 dark:hover:text-purple-300 transition-colors cursor-pointer group"
 									onClick={() => toggle(index)}
 									type="button"
 								>
-									<span className={cn(isOpen && "text-purple-600 dark:text-purple-300 font-bold")}>
+									<span
+										className={cn(
+											isOpen && "text-purple-600 dark:text-purple-300 font-bold"
+										)}
+									>
 										{faq.question}
 									</span>
 									<span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border/80 text-muted-foreground group-hover:border-purple-500/50 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
