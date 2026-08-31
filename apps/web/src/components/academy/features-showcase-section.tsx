@@ -89,10 +89,12 @@ export function FeaturesShowcaseSection() {
 								Coaching &amp; Mentorship
 							</span>
 							<h3 className="font-extrabold text-2xl sm:text-4xl tracking-tight text-white leading-tight">
-								Learn 1-on-1 from Real Ecom Experts Who&apos;ve Built $100M+ Brands
+								Learn 1-on-1 from Real Ecom Experts Who&apos;ve Built $100M+
+								Brands
 							</h3>
 							<p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-								Personalized guidance from mentors with unmatched experience scaling 7, 8, and 9-figure direct-to-consumer brands.
+								Personalized guidance from mentors with unmatched experience
+								scaling 7, 8, and 9-figure direct-to-consumer brands.
 							</p>
 							<Link
 								className="mt-2 inline-flex items-center gap-1.5 font-semibold text-sm text-purple-300 hover:text-white transition-colors"
@@ -125,14 +127,16 @@ export function FeaturesShowcaseSection() {
 									<div className="absolute bottom-3 inset-x-0 flex justify-center gap-2">
 										<div className="flex items-center gap-3 rounded-full bg-black/70 px-4 py-1.5 backdrop-blur-md border border-white/20 text-xs">
 											<span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-											<span className="font-mono text-[11px] text-white">1-on-1 Growth Session</span>
+											<span className="font-mono text-[11px] text-white">
+												1-on-1 Growth Session
+											</span>
 											<Video className="size-3.5 text-white/80" />
 										</div>
 									</div>
 								</div>
 
-								{/* Slack Icon Float */}
-								<div className="absolute -bottom-4 -right-4 flex size-14 items-center justify-center rounded-2xl border border-purple-400/40 bg-[#3f0e40] shadow-2xl">
+								{/* Discord Icon Float */}
+								<div className="absolute -bottom-4 -right-4 flex size-14 items-center justify-center rounded-2xl border border-indigo-400/40 bg-[#5865F2] shadow-2xl">
 									<span className="font-black text-2xl text-white">#</span>
 								</div>
 							</div>
@@ -154,7 +158,8 @@ export function FeaturesShowcaseSection() {
 								Schedule Weekly 1-on-1 Calls with Mentors
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								Book in directly with our mentors and receive 1-on-1 help from ecom&apos;s top founders and subject matter experts.
+								Book in directly with our mentors and receive 1-on-1 help from
+								ecom&apos;s top founders and subject matter experts.
 							</p>
 						</div>
 
@@ -167,18 +172,28 @@ export function FeaturesShowcaseSection() {
 										<span className="text-primary">30 min</span>
 									</div>
 									<div className="mt-3 grid grid-cols-5 gap-1 text-center font-mono text-[10px]">
-										<span className="p-1 rounded bg-primary/10 text-primary font-bold">14</span>
-										<span className="p-1 rounded bg-primary/10 text-primary font-bold">15</span>
-										<span className="p-1 rounded bg-primary text-primary-foreground font-bold">16</span>
-										<span className="p-1 rounded bg-primary/10 text-primary font-bold">17</span>
-										<span className="p-1 rounded bg-primary/10 text-primary font-bold">18</span>
+										<span className="p-1 rounded bg-primary/10 text-primary font-bold">
+											14
+										</span>
+										<span className="p-1 rounded bg-primary/10 text-primary font-bold">
+											15
+										</span>
+										<span className="p-1 rounded bg-primary text-primary-foreground font-bold">
+											16
+										</span>
+										<span className="p-1 rounded bg-primary/10 text-primary font-bold">
+											17
+										</span>
+										<span className="p-1 rounded bg-primary/10 text-primary font-bold">
+											18
+										</span>
 									</div>
 								</div>
 								<div className="sm:col-span-6 rounded-xl overflow-hidden border border-border/70 aspect-video relative">
 									<img
 										alt="Mentor Call Mockup"
-										className="size-full object-cover"
-										src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80"
+										className="size-full object-cover object-[center_60%]"
+										src="https://media.licdn.com/dms/image/v2/D5603AQEEkS4yPwBxug/profile-displayphoto-shrink_800_800/B56ZaSMRkOHAAc-/0/1746209415394?e=1789603200&v=beta&t=u7J3VIXNIg6BCsBsbpm0uclCeqQ7DYWO7SuMObdNOIo"
 									/>
 									<div className="absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 font-mono text-[9px] text-white">
 										Live Call
@@ -188,47 +203,71 @@ export function FeaturesShowcaseSection() {
 						</div>
 					</div>
 
-					{/* Card 2: Slack On-Demand Support */}
+					{/* Card 2: Discord On-Demand Support */}
 					<div className="rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-xs flex flex-col justify-between transition-all hover:border-purple-500/40">
 						<div>
-							<div className="flex size-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 mb-4">
+							<div className="flex size-10 items-center justify-center rounded-xl bg-indigo-500/10 text-[#5865F2] mb-4">
 								<MessageSquare className="size-5" />
 							</div>
 							<h4 className="font-bold text-lg sm:text-xl text-foreground">
-								Get Support On Demand Through Slack
+								Get Support On Demand Through Discord
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								Your personal Slack channel connects you directly to our mentors 24/7, giving you instant access to advice, feedback, and solutions as you need them.
+								Your private Discord channel connects you directly to our
+								mentors 24/7, giving you instant access to advice, feedback, and
+								solutions as you need them.
 							</p>
 						</div>
 
-						{/* Slack Interface Mockup */}
+						{/* Discord Interface Mockup */}
 						<div className="mt-6 rounded-2xl border border-border/60 bg-[#1e102d] text-white p-4 font-sans text-xs">
 							<div className="flex items-center gap-2 pb-3 border-b border-purple-800/40 text-purple-200">
-								<Hash className="size-3.5 text-purple-400" />
+								<Hash className="size-3.5 text-[#5865F2]" />
 								<span className="font-bold">#my-brand-private-channel</span>
-								<span className="ml-auto text-[10px] text-purple-300/60 font-mono">24/7 Active</span>
+								<span className="ml-auto text-[10px] text-purple-300/60 font-mono">
+									24/7 Active
+								</span>
 							</div>
 							<div className="mt-3 space-y-2.5">
 								<div className="flex items-start gap-2.5">
-									<span className="size-6 rounded-full bg-purple-500 font-bold flex items-center justify-center text-[10px] text-white shrink-0">
-										JD
+									<span className="size-6 rounded-full bg-purple-600 font-bold flex items-center justify-center text-[10px] text-white shrink-0">
+										AC
 									</span>
 									<div>
-										<p className="font-bold text-[11px] text-purple-200">Jayden (Growth Mentor)</p>
+										<p className="font-bold text-[11px] text-purple-200">
+											Anurag (Growth Mentor)
+										</p>
 										<p className="text-[11px] text-purple-100/90 mt-0.5">
-											Reviewed your ad set! Bump budget on Ad #3 by 30% and duplicate to broad audience.
+											Reviewed your store offer! Simplified the PDP bundle
+											pricing — ready to scale tests.
 										</p>
 									</div>
 								</div>
 								<div className="flex items-start gap-2.5">
-									<span className="size-6 rounded-full bg-amber-500 font-bold flex items-center justify-center text-[10px] text-white shrink-0">
-										IH
+									<span className="size-6 rounded-full bg-indigo-600 font-bold flex items-center justify-center text-[10px] text-white shrink-0">
+										AV
 									</span>
 									<div>
-										<p className="font-bold text-[11px] text-purple-200">Isaac (Sourcing Mentor)</p>
+										<p className="font-bold text-[11px] text-purple-200">
+											Avinash (Creative &amp; CRO)
+										</p>
 										<p className="text-[11px] text-purple-100/90 mt-0.5">
-											Supplier intro is sent! Target unit price negotiated down to $4.20/pc.
+											New hook variations delivered! Push the UGC angle to broad
+											audience ad set.
+										</p>
+									</div>
+								</div>
+								<div className="flex items-start gap-2.5">
+									<span className="size-6 rounded-full bg-pink-600 font-bold flex items-center justify-center text-[10px] text-white shrink-0">
+										MD
+									</span>
+									<div>
+										<p className="font-bold text-[11px] text-purple-200">
+											Medha (Paid Media &amp; Meta Ads)
+										</p>
+										<p className="text-[11px] text-purple-100/90 mt-0.5">
+											Target CPA dropped to $18.40 on winning campaign. Scaling
+											budget by 30%.
 										</p>
 									</div>
 								</div>
@@ -250,7 +289,8 @@ export function FeaturesShowcaseSection() {
 						Level Up Every Aspect of Your Brand
 					</h3>
 					<p className="mt-2 text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-						You&apos;ll have access to a mentor who&apos;s a subject matter expert in:
+						You&apos;ll have access to a mentor who&apos;s a subject matter
+						expert in:
 					</p>
 
 					{/* 19 Purple Topic Pills */}
@@ -283,7 +323,9 @@ export function FeaturesShowcaseSection() {
 										<Star className="size-4 fill-amber-400 text-amber-400" />
 									</div>
 									<blockquote className="font-semibold text-sm sm:text-base text-purple-100 leading-snug">
-										&ldquo;The thing that&apos;s made our business grow to where it is now is having access to mentors in every aspect of our business.&rdquo;
+										&ldquo;The thing that&apos;s made our business grow to where
+										it is now is having access to mentors in every aspect of our
+										business.&rdquo;
 									</blockquote>
 									<p className="mt-1.5 text-xs text-purple-300/80 font-medium">
 										— Aami, founder of Mimi &amp; Co
@@ -322,10 +364,12 @@ export function FeaturesShowcaseSection() {
 								Content &amp; Resources
 							</span>
 							<h3 className="font-extrabold text-2xl sm:text-4xl tracking-tight text-white leading-tight">
-								Copy and Paste the Strategies We&apos;re Actively Using to Scale $100M+ Brands
+								Copy and Paste the Strategies We&apos;re Actively Using to Scale
+								$100M+ Brands
 							</h3>
 							<p className="text-purple-200/80 text-sm sm:text-base leading-relaxed">
-								Unlock access to SOPs, templates, training videos, and resources that we&apos;re using inside of 9 figure brands.
+								Unlock access to SOPs, templates, training videos, and resources
+								that we&apos;re using inside of 9 figure brands.
 							</p>
 						</div>
 
@@ -364,7 +408,9 @@ export function FeaturesShowcaseSection() {
 								Steal Plug-n-Play Templates
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								Copy/paste the sheets and templates we use inside our own brands and see an immediate impact to your brand&apos;s growth and profitability.
+								Copy/paste the sheets and templates we use inside our own brands
+								and see an immediate impact to your brand&apos;s growth and
+								profitability.
 							</p>
 						</div>
 
@@ -372,7 +418,9 @@ export function FeaturesShowcaseSection() {
 						<div className="mt-6 rounded-2xl border border-border/60 bg-muted/30 p-4">
 							<div className="grid grid-cols-2 gap-3">
 								<div className="rounded-xl border border-border/70 bg-card p-3 shadow-xs">
-									<p className="font-mono text-[10px] font-semibold text-primary uppercase">Ad Creative Sheet</p>
+									<p className="font-mono text-[10px] font-semibold text-primary uppercase">
+										Ad Creative Sheet
+									</p>
 									<div className="mt-2 space-y-1">
 										<div className="h-2 w-full rounded bg-muted animate-pulse" />
 										<div className="h-2 w-4/5 rounded bg-muted animate-pulse" />
@@ -380,7 +428,9 @@ export function FeaturesShowcaseSection() {
 									</div>
 								</div>
 								<div className="rounded-xl border border-border/70 bg-card p-3 shadow-xs">
-									<p className="font-mono text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase">Unit Economics OS</p>
+									<p className="font-mono text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase">
+										Unit Economics OS
+									</p>
 									<div className="mt-2 space-y-1">
 										<div className="h-2 w-full rounded bg-muted animate-pulse" />
 										<div className="h-2 w-3/4 rounded bg-muted animate-pulse" />
@@ -401,7 +451,9 @@ export function FeaturesShowcaseSection() {
 								Learn All of Our Tactics from 400+ Training Videos
 							</h4>
 							<p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-								From structuring ad accounts, building offers, international expansion, and more. You&apos;ll unlock our extensive 400+ video library of step-by-step video tutorials and SOPs.
+								From structuring ad accounts, building offers, international
+								expansion, and more. You&apos;ll unlock our extensive 400+ video
+								library of step-by-step video tutorials and SOPs.
 							</p>
 						</div>
 
@@ -413,9 +465,13 @@ export function FeaturesShowcaseSection() {
 										<span className="size-2 rounded-full bg-rose-400" />
 										<span className="size-2 rounded-full bg-amber-400" />
 										<span className="size-2 rounded-full bg-emerald-400" />
-										<span className="ml-2 font-mono text-[10px] text-muted-foreground">SOP: Meta Ad Strategy</span>
+										<span className="ml-2 font-mono text-[10px] text-muted-foreground">
+											SOP: Meta Ad Strategy
+										</span>
 									</div>
-									<span className="font-mono text-[10px] font-bold text-primary">+ 400 more</span>
+									<span className="font-mono text-[10px] font-bold text-primary">
+										+ 400 more
+									</span>
 								</div>
 								<div className="mt-2.5 flex items-center gap-3">
 									<div className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -425,7 +481,9 @@ export function FeaturesShowcaseSection() {
 										<p className="font-semibold text-xs text-foreground truncate">
 											Mastering Creative Testing &amp; Horizontal Scaling
 										</p>
-										<p className="text-[10px] text-muted-foreground font-mono">14 Modules · Updated Weekly</p>
+										<p className="text-[10px] text-muted-foreground font-mono">
+											14 Modules · Updated Weekly
+										</p>
 									</div>
 								</div>
 							</div>
