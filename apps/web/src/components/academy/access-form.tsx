@@ -106,7 +106,7 @@ function EmailStep({
 						inputMode="tel"
 						minLength={MIN_PHONE_DIGITS}
 						name="phone"
-						placeholder="+91 98765 43210"
+						placeholder="+1 (555) 234-5678"
 						required
 						type="tel"
 					/>
