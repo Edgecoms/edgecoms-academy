@@ -24,15 +24,11 @@ const TOPICS = [
 	"CRO",
 	"Email & SMS",
 	"Facebook Ads",
-	"Finance",
 	"Landing Pages",
 	"Licensing",
 	"Ops & Logistics",
 	"Organic Social",
 	"Product & Sourcing",
-	"Retail",
-	"SEO",
-	"Tax",
 	"+ More",
 ];
 
