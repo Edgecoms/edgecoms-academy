@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AuthAction } from "@/components/academy/auth-action";
 import { LearnShell } from "@/components/academy/learn-shell";
 import { LessonCard } from "@/components/academy/lesson-card";
+import { TrackViewContent } from "@/components/track-view-content";
 import { getCourse, getCourses } from "@/content";
 
 export const dynamicParams = false;
@@ -61,7 +62,12 @@ export default async function CoursePage({ params }: PageProps) {
 	};
 
 	return (
-		<LearnShell
+		<>
+			<TrackViewContent
+				content_name={course.title}
+				content_type="course"
+			/>
+			<LearnShell
 			action={<AuthAction />}
 			course={course}
 			trail={["Academy", course.title]}
@@ -100,5 +106,6 @@ export default async function CoursePage({ params }: PageProps) {
 				))}
 			</div>
 		</LearnShell>
+		</>
 	);
 }

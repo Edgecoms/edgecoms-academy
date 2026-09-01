@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
+import { MetaPixelProvider } from "@/components/meta-pixel-provider";
 import Providers from "@/components/providers";
 import "../index.css";
 
@@ -44,7 +45,9 @@ export default function RootLayout({
 			{/* extensions such as ColorZilla add attributes to body before hydration */}
 			<body suppressHydrationWarning>
 				<Providers>{children}</Providers>
+				<MetaPixelProvider />
 			</body>
 		</html>
 	);
 }
+

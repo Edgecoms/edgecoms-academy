@@ -8,6 +8,7 @@ import { LessonPagination } from "@/components/academy/lesson-pagination";
 import { LessonPlayer } from "@/components/academy/lesson-player";
 import { MarkStartedOnMount } from "@/components/academy/mark-started-on-mount";
 import { ResourceList } from "@/components/academy/resource-list";
+import { TrackViewContent } from "@/components/track-view-content";
 import { getLesson, getLessonNeighbours } from "@/content";
 import { getCourseProgress } from "@/lib/progress";
 
@@ -43,6 +44,11 @@ export default async function LessonPage({ params }: PageProps) {
 
 	return (
 		<div className="mx-auto w-full max-w-5xl px-6 py-10 sm:px-10 sm:py-14">
+			<TrackViewContent
+				content_name={lesson.title}
+				content_type="lesson"
+				content_category={module.title}
+			/>
 			{lesson.video ? (
 				<>
 					{/* the breadcrumb carries the title; the heading stays for a11y */}

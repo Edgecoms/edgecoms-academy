@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useActionState, useCallback, useEffect, useState } from "react";
 
 import { authClient } from "@/lib/auth-client";
+import { trackEvent } from "@/lib/meta-pixel";
 
 const RESEND_COOLDOWN_SECONDS = 45;
 const CODE_LENGTH = 6;
@@ -52,6 +53,7 @@ function EmailStep({
 				);
 			}
 
+			trackEvent("Lead");
 			onRequested({ email, name, phone });
 			return null;
 		},
@@ -170,6 +172,7 @@ function CodeStep({
 				);
 			}
 
+			trackEvent("CompleteRegistration");
 			router.push("/academy/courses/shopify-ecommerce");
 			router.refresh();
 			return null;

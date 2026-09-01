@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
+import { TrackedCalendlyLink } from "@/components/tracked-calendly-link";
+
 export function SiteFooter() {
 	return (
 		<footer className="mt-auto border-t border-border/80 bg-card/60 backdrop-blur-md transition-colors text-card-foreground">
@@ -99,15 +101,13 @@ export function SiteFooter() {
 								</Link>
 							</li>
 							<li>
-								<a
+								<TrackedCalendlyLink
 									className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
 									href="https://calendly.com/anurag-edgecoms/book-a-free-call"
-									rel="noopener noreferrer"
-									target="_blank"
 								>
 									<span>Book Free 1-on-1 Audit</span>
 									<ArrowUpRight className="size-3.5 text-muted-foreground" />
-								</a>
+								</TrackedCalendlyLink>
 							</li>
 							<li>
 								<a
