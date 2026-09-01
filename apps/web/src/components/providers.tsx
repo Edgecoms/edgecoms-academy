@@ -4,6 +4,7 @@ import { Toaster } from "@edgecoms-academy/ui/components/sonner";
 
 import { TooltipProvider } from "@edgecoms-academy/ui/components/tooltip";
 import { ThemeProvider } from "./theme-provider";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 	return (
@@ -15,6 +16,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 		>
 			<TooltipProvider>{children}</TooltipProvider>
 			<Toaster position="top-center" richColors />
+			<Analytics/>
 		</ThemeProvider>
 	);
 }
