@@ -37,6 +37,7 @@
     "db:studio": "turbo run db:studio -F @edgecoms-academy/db --",
     "db:generate": "turbo run db:generate -F @edgecoms-academy/db --",
     "db:migrate": "turbo run db:migrate -F @edgecoms-academy/db --",
+    "email:backfill": "DOTENV_CONFIG_PATH=${DOTENV_CONFIG_PATH:-apps/web/.env} bun run packages/auth/scripts/backfill-welcome-emails.ts",
     "db:start": "turbo run db:start -F @edgecoms-academy/db --",
     "db:watch": "turbo run db:watch -F @edgecoms-academy/db --",
     "db:stop": "turbo run db:stop -F @edgecoms-academy/db --",

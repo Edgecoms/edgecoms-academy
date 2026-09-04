@@ -5,8 +5,8 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 interface FAQItem {
-	question: string;
 	answer: string;
+	question: string;
 }
 
 const FAQS: FAQItem[] = [
@@ -57,8 +57,8 @@ export function FAQSection() {
 		>
 			<div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
 				{/* Section Title */}
-				<div className="text-center mb-12 sm:mb-16">
-					<h2 className="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent">
+				<div className="mb-12 text-center sm:mb-16">
+					<h2 className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 bg-clip-text font-extrabold text-3xl text-transparent tracking-tight sm:text-4xl md:text-5xl dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300">
 						Frequently Asked Questions
 					</h2>
 					<p className="mt-3 text-muted-foreground text-sm sm:text-base">
@@ -67,28 +67,28 @@ export function FAQSection() {
 				</div>
 
 				{/* Accordion List */}
-				<div className="divide-y divide-border/60 border-y border-border/60">
+				<div className="divide-y divide-border/60 border-border/60 border-y">
 					{FAQS.map((faq, index) => {
 						const isOpen = openIndex === index;
 						return (
 							<div
-								className="py-5 sm:py-6 transition-colors"
+								className="py-5 transition-colors sm:py-6"
 								key={faq.question}
 							>
 								<button
 									aria-expanded={isOpen}
-									className="flex w-full items-center justify-between gap-4 text-left font-semibold text-base sm:text-lg text-foreground hover:text-purple-600 dark:hover:text-purple-300 transition-colors cursor-pointer group"
+									className="group flex w-full cursor-pointer items-center justify-between gap-4 text-left font-semibold text-base text-foreground transition-colors hover:text-purple-600 sm:text-lg dark:hover:text-purple-300"
 									onClick={() => toggle(index)}
 									type="button"
 								>
 									<span
 										className={cn(
-											isOpen && "text-purple-600 dark:text-purple-300 font-bold"
+											isOpen && "font-bold text-purple-600 dark:text-purple-300"
 										)}
 									>
 										{faq.question}
 									</span>
-									<span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border/80 text-muted-foreground group-hover:border-purple-500/50 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
+									<span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border/80 text-muted-foreground transition-colors group-hover:border-purple-500/50 group-hover:text-purple-600 dark:group-hover:text-purple-300">
 										{isOpen ? (
 											<Minus className="size-4" />
 										) : (
@@ -97,7 +97,7 @@ export function FAQSection() {
 									</span>
 								</button>
 								{isOpen && (
-									<div className="mt-4 pr-10 text-xs sm:text-sm text-muted-foreground leading-relaxed animate-in fade-in-50 duration-200">
+									<div className="fade-in-50 mt-4 animate-in pr-10 text-muted-foreground text-xs leading-relaxed duration-200 sm:text-sm">
 										<p>{faq.answer}</p>
 									</div>
 								)}

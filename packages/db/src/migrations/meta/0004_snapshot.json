@@ -1,6 +1,6 @@
 {
-  "id": "eacf3987-caaa-4c1b-892b-671c3815355f",
-  "prevId": "4aebb9d4-43f6-4b86-b8ba-b791666bf6bd",
+  "id": "6d246d91-fb42-4c17-b8f4-79297eaae6cb",
+  "prevId": "eacf3987-caaa-4c1b-892b-671c3815355f",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -428,6 +428,12 @@
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        },
+        "welcome_email_sent_at": {
+          "name": "welcome_email_sent_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},

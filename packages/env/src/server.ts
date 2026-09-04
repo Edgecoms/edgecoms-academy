@@ -38,6 +38,11 @@ export const env = createEnv({
 		RESEND_API_KEY: z.string().min(1).optional(),
 		SMTP_URL: z.string().min(1).default("smtp://localhost:1025"),
 		SUPPORT_EMAIL: z.string().min(1).default("support@edgecoms.com"),
+		WHATSAPP_COMMUNITY_URL: z
+			.url()
+			.default(
+				"https://chat.whatsapp.com/DKxNVrzTo3u7jVaBtOfLMZ?s=cl&p=a&mlu=4&ilr=4"
+			),
 	},
 	skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });

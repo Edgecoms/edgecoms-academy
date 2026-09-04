@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
-import { PIXEL_ID, initPixel, trackPageView } from "@/lib/meta-pixel";
+import { initPixel, PIXEL_ID, trackPageView } from "@/lib/meta-pixel";
 
 /**
  * Initialises the Meta Pixel on mount and fires a `PageView` event on every

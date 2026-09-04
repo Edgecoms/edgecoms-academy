@@ -29,6 +29,13 @@
       "when": 1787983043752,
       "tag": "0003_cooing_hannibal_king",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1788511813192,
+      "tag": "0004_slippery_hercules",
+      "breakpoints": true
     }
   ]
 }

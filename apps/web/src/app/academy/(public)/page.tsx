@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AcademyHero } from "@/components/academy/academy-hero";
 import { EnrollmentCtaSection } from "@/components/academy/enrollment-cta-section";
 import { FAQSection } from "@/components/academy/faq-section";
@@ -7,7 +8,6 @@ import { SuccessStoriesSection } from "@/components/academy/success-stories-sect
 import { TheModelSection } from "@/components/academy/the-model-section";
 import { ValuePillarsSection } from "@/components/academy/value-pillars-section";
 import { getCourseTotals } from "@/content";
-import type { Metadata } from "next";
 
 const COURSE_SLUG = "shopify-ecommerce";
 const AUDIT_URL = "https://calendly.com/anurag-edgecoms/book-a-free-call";

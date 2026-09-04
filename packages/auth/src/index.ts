@@ -9,6 +9,7 @@ import { emailOTP } from "better-auth/plugins/email-otp";
 
 import { accessCodeEmail } from "./access-code-email";
 import { sendEmail } from "./email";
+import { sendWelcomeEmail } from "./send-welcome-email";
 
 const SESSION_LIFETIME_SECONDS = 60 * 60 * 24 * 60;
 const SESSION_REFRESH_SECONDS = 60 * 60 * 24;
@@ -23,6 +24,23 @@ export function createAuth() {
 			provider: "pg",
 			schema,
 		}),
+		databaseHooks: {
+			user: {
+				create: {
+					// Runs once, the first time someone verifies a code, so this is
+					// the signup moment rather than every sign-in.
+					after: async (createdUser) => {
+						try {
+							await sendWelcomeEmail(db, createdUser);
+						} catch (error) {
+							// A welcome email must never keep someone out of the course
+							// they just signed up for, so delivery failures stay non-fatal.
+							console.error("Welcome email failed to send", error);
+						}
+					},
+				},
+			},
+		},
 		emailAndPassword: {
 			enabled: false,
 		},

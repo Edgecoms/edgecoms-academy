@@ -13,8 +13,8 @@ type Fbq = ((...args: unknown[]) => void) & {
 
 declare global {
 	interface Window {
-		fbq?: Fbq;
 		_fbq?: Fbq;
+		fbq?: Fbq;
 	}
 }
 
@@ -26,8 +26,8 @@ export interface MetaPixelContentParams {
 	content_name?: string;
 	content_type?: string;
 	contents?: Array<{ id: string; quantity: number }>;
-	value?: number;
 	currency?: string;
+	value?: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -38,7 +38,7 @@ const PIXEL_ID = env.NEXT_PUBLIC_META_PIXEL_ID;
 /** Returns the `fbq` function if the pixel is loaded, or `undefined`. */
 function getFbq(): Fbq | undefined {
 	if (!PIXEL_ID || typeof window === "undefined") {
-		return undefined;
+		return;
 	}
 	return window.fbq;
 }
@@ -59,7 +59,7 @@ export function initPixel(): void {
 	}
 
 	// Meta Pixel base code (identical to the snippet from Events Manager)
-	const n: Fbq = function (...args: unknown[]) {
+	const n: Fbq = (...args: unknown[]) => {
 		if (n.callMethod) {
 			n.callMethod(...args);
 		} else {
@@ -101,7 +101,7 @@ export function trackPageView(): void {
 // ---------------------------------------------------------------------------
 export function trackEvent(
 	eventName: string,
-	params?: MetaPixelContentParams,
+	params?: MetaPixelContentParams
 ): void {
 	const fbq = getFbq();
 	if (!fbq) {
@@ -119,7 +119,7 @@ export function trackEvent(
 // ---------------------------------------------------------------------------
 export function trackCustomEvent(
 	eventName: string,
-	params?: Record<string, unknown>,
+	params?: Record<string, unknown>
 ): void {
 	const fbq = getFbq();
 	if (!fbq) {

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-import { trackEvent, type MetaPixelContentParams } from "@/lib/meta-pixel";
+import { type MetaPixelContentParams, trackEvent } from "@/lib/meta-pixel";
 
 /**
  * Invisible client component that fires a Meta Pixel `ViewContent` event once

@@ -18,35 +18,35 @@ const PILLARS = [
 
 export function ValuePillarsSection() {
 	return (
-		<section className="relative overflow-hidden bg-gradient-to-b from-hero-bg-to via-[#260848] to-hero-bg-to text-hero-foreground py-20 sm:py-28 lg:py-32 border-t border-purple-900/40">
+		<section className="relative overflow-hidden border-purple-900/40 border-t bg-gradient-to-b from-hero-bg-to via-[#260848] to-hero-bg-to py-20 text-hero-foreground sm:py-28 lg:py-32">
 			{/* Ambient Radial Glow */}
 			<div
 				aria-hidden="true"
 				className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40 mix-blend-screen"
 			>
-				<div className="size-[35rem] sm:size-[50rem] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.22)_0%,rgba(147,51,234,0.08)_50%,transparent_75%)] blur-3xl" />
+				<div className="size-[35rem] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.22)_0%,rgba(147,51,234,0.08)_50%,transparent_75%)] blur-3xl sm:size-[50rem]" />
 			</div>
 
 			<div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
 					{/* Left Column: Headline, 4 Pillars Grid & Yellow CTA */}
-					<div className="lg:col-span-7 flex flex-col items-start">
+					<div className="flex flex-col items-start lg:col-span-7">
 						{/* Main Headline */}
-						<h2 className="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-white leading-[1.16] max-w-xl">
+						<h2 className="max-w-xl font-extrabold text-3xl text-white leading-[1.16] tracking-tight sm:text-4xl md:text-5xl">
 							We Help Founders Unlock their Brand&apos;s{" "}
-							<span className="relative underline decoration-purple-400 decoration-wavy decoration-from-font">
+							<span className="relative underline decoration-from-font decoration-purple-400 decoration-wavy">
 								True Potential
 							</span>
 						</h2>
 
 						{/* 2x2 Pillars Grid */}
-						<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+						<div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 							{PILLARS.map((pillar, idx) => (
 								<div
-									className="border-l-2 border-purple-400/50 pl-4 py-1"
+									className="border-purple-400/50 border-l-2 py-1 pl-4"
 									key={idx}
 								>
-									<p className="text-xs sm:text-sm text-purple-100/90 leading-relaxed font-medium">
+									<p className="font-medium text-purple-100/90 text-xs leading-relaxed sm:text-sm">
 										{pillar.text}
 									</p>
 								</div>
@@ -56,7 +56,7 @@ export function ValuePillarsSection() {
 						{/* Yellow Action CTA */}
 						<div className="mt-10">
 							<Link
-								className="group inline-flex items-center gap-2.5 rounded-xl bg-hero-cta-bg px-8 py-3.5 font-bold text-hero-cta-fg text-sm sm:text-base shadow-xl shadow-yellow-500/20 transition-all hover:bg-hero-cta-hover hover:scale-[1.02] active:scale-[0.99]"
+								className="group inline-flex items-center gap-2.5 rounded-xl bg-hero-cta-bg px-8 py-3.5 font-bold text-hero-cta-fg text-sm shadow-xl shadow-yellow-500/20 transition-all hover:scale-[1.02] hover:bg-hero-cta-hover active:scale-[0.99] sm:text-base"
 								href="/academy/access"
 							>
 								<span>Apply Now</span>
@@ -66,10 +66,10 @@ export function ValuePillarsSection() {
 					</div>
 
 					{/* Right Column: Testimonial Card (Sam - Ecoy) */}
-					<div className="lg:col-span-5 flex justify-center lg:justify-end">
-						<div className="relative w-full max-w-md rounded-3xl border border-purple-700/40 bg-gradient-to-b from-[#2c0d54]/95 to-[#190432]/95 p-7 sm:p-9 shadow-2xl backdrop-blur-md transition-all hover:border-purple-500/50">
+					<div className="flex justify-center lg:col-span-5 lg:justify-end">
+						<div className="relative w-full max-w-md rounded-3xl border border-purple-700/40 bg-gradient-to-b from-[#2c0d54]/95 to-[#190432]/95 p-7 shadow-2xl backdrop-blur-md transition-all hover:border-purple-500/50 sm:p-9">
 							{/* 5 Stars */}
-							<div className="flex items-center gap-1 text-amber-400 mb-4">
+							<div className="mb-4 flex items-center gap-1 text-amber-400">
 								<Star className="size-4 fill-amber-400 text-amber-400" />
 								<Star className="size-4 fill-amber-400 text-amber-400" />
 								<Star className="size-4 fill-amber-400 text-amber-400" />
@@ -78,12 +78,18 @@ export function ValuePillarsSection() {
 							</div>
 
 							{/* Testimonial Quote */}
-							<blockquote className="text-xs sm:text-sm font-medium text-purple-100 leading-relaxed italic">
-								&ldquo;Edgecoms Academy has been instrumental in our <strong className="text-white not-italic font-bold">162% growth year to date</strong>. We&apos;ve collaboratively established great processes around finance, inventory and marketing to put our business in the best position to grow.&rdquo;
+							<blockquote className="font-medium text-purple-100 text-xs italic leading-relaxed sm:text-sm">
+								&ldquo;Edgecoms Academy has been instrumental in our{" "}
+								<strong className="font-bold text-white not-italic">
+									162% growth year to date
+								</strong>
+								. We&apos;ve collaboratively established great processes around
+								finance, inventory and marketing to put our business in the best
+								position to grow.&rdquo;
 							</blockquote>
 
 							{/* Author Info */}
-							<div className="mt-6 flex items-center gap-3.5 border-t border-purple-800/40 pt-5">
+							<div className="mt-6 flex items-center gap-3.5 border-purple-800/40 border-t pt-5">
 								<img
 									alt="Sam, Co-founder of Ecoy"
 									className="size-12 rounded-full border-2 border-purple-500/50 object-cover shadow-md"
@@ -91,7 +97,9 @@ export function ValuePillarsSection() {
 								/>
 								<div>
 									<h3 className="font-bold text-sm text-white">Sam</h3>
-									<p className="text-xs text-purple-300/80">Co-founder of Ecoy</p>
+									<p className="text-purple-300/80 text-xs">
+										Co-founder of Ecoy
+									</p>
 								</div>
 							</div>
 						</div>

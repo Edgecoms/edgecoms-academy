@@ -4,10 +4,10 @@ import { ArrowRight, ExternalLink, Star } from "lucide-react";
 import Link from "next/link";
 
 interface Mentor {
-	name: string;
-	role: string;
 	highlight: string;
 	image: string;
+	name: string;
+	role: string;
 }
 
 const MENTORS: Mentor[] = [
@@ -64,38 +64,38 @@ export function MentorsSection() {
 			{/* Ambient background glow */}
 			<div
 				aria-hidden="true"
-				className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40 dark:opacity-60 mix-blend-screen"
+				className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40 mix-blend-screen dark:opacity-60"
 			>
-				<div className="size-[30rem] sm:size-[45rem] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.18)_0%,rgba(147,51,234,0.06)_50%,transparent_75%)] blur-3xl" />
+				<div className="size-[30rem] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.18)_0%,rgba(147,51,234,0.06)_50%,transparent_75%)] blur-3xl sm:size-[45rem]" />
 			</div>
 
-			<div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 text-center">
+			<div className="relative mx-auto w-full max-w-6xl px-4 text-center sm:px-6">
 				{/* Section Header */}
 				<div className="mx-auto max-w-3xl">
-					<h2 className="font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground leading-[1.18]">
+					<h2 className="font-extrabold text-3xl text-foreground leading-[1.18] tracking-tight sm:text-4xl md:text-5xl">
 						The Fastest Way to Grow is By{" "}
-						<span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-400 dark:via-purple-300 dark:to-indigo-300 bg-clip-text text-transparent block sm:inline">
+						<span className="block bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent sm:inline dark:from-purple-400 dark:via-purple-300 dark:to-indigo-300">
 							Learning From Mentors Who&apos;ve Done It Before You
 						</span>
 					</h2>
-					<p className="mt-5 text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+					<p className="mx-auto mt-5 max-w-2xl text-muted-foreground text-sm leading-relaxed sm:text-base">
 						Edgecoms Academy gives brands direct eCommerce mentorship from
 						experienced founders and operators inside an elite community.
 					</p>
 				</div>
 
 				{/* Mentors Cards Grid (3-column layout) */}
-				<div className="mt-12 sm:mt-16 mx-auto max-w-4xl">
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+				<div className="mx-auto mt-12 max-w-4xl sm:mt-16">
+					<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
 						{MENTORS.map((mentor) => (
 							<div
-								className="group relative flex h-88 sm:h-96 flex-col justify-end overflow-hidden rounded-2xl border border-purple-800/30 dark:border-purple-800/40 bg-gradient-to-b from-[#2a0c4e] to-[#16042a] p-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/60 hover:shadow-purple-950/40"
+								className="group relative flex h-88 flex-col justify-end overflow-hidden rounded-2xl border border-purple-800/30 bg-gradient-to-b from-[#2a0c4e] to-[#16042a] p-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/60 hover:shadow-purple-950/40 sm:h-96 dark:border-purple-800/40"
 								key={mentor.name}
 							>
 								{/* Mentor Image with gradient mesh & duotone */}
 								<img
 									alt={mentor.name}
-									className="absolute inset-0 size-full object-cover object-top grayscale contrast-110 opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-95 mix-blend-luminosity"
+									className="absolute inset-0 size-full object-cover object-top opacity-80 mix-blend-luminosity contrast-110 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-95"
 									src={mentor.image}
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-[#140226] via-[#1c0638]/70 to-transparent" />
@@ -105,10 +105,10 @@ export function MentorsSection() {
 									<h3 className="font-bold text-lg text-white tracking-tight">
 										{mentor.name}
 									</h3>
-									<p className="text-purple-300 font-semibold text-xs mt-0.5">
+									<p className="mt-0.5 font-semibold text-purple-300 text-xs">
 										{mentor.role}
 									</p>
-									<p className="mt-2 text-xs text-purple-200/85 leading-relaxed">
+									<p className="mt-2 text-purple-200/85 text-xs leading-relaxed">
 										{mentor.highlight}
 									</p>
 								</div>
@@ -119,11 +119,11 @@ export function MentorsSection() {
 
 				{/* Mentors Subtext & Link */}
 				<div className="mt-8 flex flex-col items-center gap-2">
-					<p className="text-muted-foreground text-xs sm:text-sm font-medium">
+					<p className="font-medium text-muted-foreground text-xs sm:text-sm">
 						Direct 1-on-1 access to our dedicated mentors and operators
 					</p>
 					<Link
-						className="inline-flex items-center gap-1 font-semibold text-xs sm:text-sm text-primary hover:underline underline-offset-4"
+						className="inline-flex items-center gap-1 font-semibold text-primary text-xs underline-offset-4 hover:underline sm:text-sm"
 						href="/academy/access"
 					>
 						<span>View Mentors</span>
@@ -132,19 +132,19 @@ export function MentorsSection() {
 				</div>
 
 				{/* 3 Stats Row */}
-				<div className="mt-16 sm:mt-20 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-6 sm:gap-8 border-y border-border/60 py-10 sm:py-14">
+				<div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-x-6 gap-y-10 border-border/60 border-y py-10 sm:mt-20 sm:grid-cols-3 sm:gap-8 sm:py-14">
 					{STATS.map((stat) => (
 						<div
-							className="flex flex-col items-center text-center px-2"
+							className="flex flex-col items-center px-2 text-center"
 							key={stat.label}
 						>
-							<span className="font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent tabular-nums leading-none">
+							<span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 bg-clip-text font-extrabold text-3xl text-transparent tabular-nums leading-none tracking-tight sm:text-4xl lg:text-5xl dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300">
 								{stat.number}
 							</span>
-							<span className="mt-1.5 font-bold text-lg sm:text-xl lg:text-2xl tracking-tight bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300 bg-clip-text text-transparent">
+							<span className="mt-1.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 bg-clip-text font-bold text-lg text-transparent tracking-tight sm:text-xl lg:text-2xl dark:from-purple-300 dark:via-purple-200 dark:to-indigo-300">
 								{stat.unit}
 							</span>
-							<span className="mt-2 text-xs sm:text-sm font-medium text-muted-foreground">
+							<span className="mt-2 font-medium text-muted-foreground text-xs sm:text-sm">
 								{stat.label}
 							</span>
 						</div>
@@ -152,18 +152,18 @@ export function MentorsSection() {
 				</div>
 
 				{/* Testimonial Capsule */}
-				<div className="mt-14 sm:mt-16 mx-auto max-w-2xl">
-					<div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-purple-800/50 bg-gradient-to-r from-[#200440] via-[#2c0856] to-[#1b0336] p-6 sm:p-7 shadow-2xl text-left text-white">
+				<div className="mx-auto mt-14 max-w-2xl sm:mt-16">
+					<div className="relative overflow-hidden rounded-2xl border border-purple-800/50 bg-gradient-to-r from-[#200440] via-[#2c0856] to-[#1b0336] p-6 text-left text-white shadow-2xl sm:rounded-3xl sm:p-7">
 						<div className="flex items-center gap-4 sm:gap-5">
 							{/* Testimonial Author Avatar */}
 							<img
 								alt="Fameez, co-founder of OTAA"
-								className="size-14 sm:size-16 shrink-0 rounded-full border-2 border-purple-500/40 object-cover shadow-md"
+								className="size-14 shrink-0 rounded-full border-2 border-purple-500/40 object-cover shadow-md sm:size-16"
 								src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&auto=format&fit=crop&q=80"
 							/>
-							<div className="flex-1 min-w-0">
+							<div className="min-w-0 flex-1">
 								{/* 5 Stars */}
-								<div className="flex items-center gap-1 text-amber-400 mb-2">
+								<div className="mb-2 flex items-center gap-1 text-amber-400">
 									<Star className="size-4 fill-amber-400 text-amber-400" />
 									<Star className="size-4 fill-amber-400 text-amber-400" />
 									<Star className="size-4 fill-amber-400 text-amber-400" />
@@ -171,11 +171,11 @@ export function MentorsSection() {
 									<Star className="size-4 fill-amber-400 text-amber-400" />
 								</div>
 								{/* Quote */}
-								<blockquote className="font-semibold text-sm sm:text-base text-purple-100 leading-snug">
+								<blockquote className="font-semibold text-purple-100 text-sm leading-snug sm:text-base">
 									&ldquo;They&apos;ve created the Avengers of Ecommerce.&rdquo;
 								</blockquote>
 								{/* Author */}
-								<p className="mt-1.5 text-xs text-purple-300/80 font-medium">
+								<p className="mt-1.5 font-medium text-purple-300/80 text-xs">
 									— Fameez, co-founder of OTAA
 								</p>
 							</div>
@@ -186,7 +186,7 @@ export function MentorsSection() {
 				{/* Apply Now CTA Button */}
 				<div className="mt-8 flex justify-center">
 					<Link
-						className="inline-flex items-center gap-2 rounded-xl bg-[#281347] hover:bg-[#341a5b] text-white border border-purple-500/30 px-8 py-3.5 font-bold text-sm sm:text-base shadow-xl shadow-purple-950/20 transition-all hover:scale-[1.02] active:scale-[0.99]"
+						className="inline-flex items-center gap-2 rounded-xl border border-purple-500/30 bg-[#281347] px-8 py-3.5 font-bold text-sm text-white shadow-purple-950/20 shadow-xl transition-all hover:scale-[1.02] hover:bg-[#341a5b] active:scale-[0.99] sm:text-base"
 						href="/academy/access"
 					>
 						<span>Apply Now</span>

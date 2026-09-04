@@ -5,47 +5,47 @@ import { TrackedCalendlyLink } from "@/components/tracked-calendly-link";
 
 export function SiteFooter() {
 	return (
-		<footer className="mt-auto border-t border-border/80 bg-card/60 backdrop-blur-md transition-colors text-card-foreground">
+		<footer className="mt-auto border-border/80 border-t bg-card/60 text-card-foreground backdrop-blur-md transition-colors">
 			{/* Main Footer Content */}
 			<div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
 				<div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
 					{/* Brand Column */}
 					<div className="flex flex-col gap-4 md:col-span-4">
 						<Link
-							className="group inline-flex items-center transition-transform hover:scale-[1.02] w-fit"
+							className="group inline-flex w-fit items-center transition-transform hover:scale-[1.02]"
 							href="/academy"
 						>
-							<div className="relative flex flex-col items-start border-2 border-foreground px-2.5 py-1 text-foreground font-mono font-black uppercase leading-none tracking-tighter">
-								<span className="text-[10px] font-extrabold tracking-widest leading-tight">
+							<div className="relative flex flex-col items-start border-2 border-foreground px-2.5 py-1 font-black font-mono text-foreground uppercase leading-none tracking-tighter">
+								<span className="font-extrabold text-[10px] leading-tight tracking-widest">
 									EDGECOMS
 								</span>
-								<span className="text-xs font-black tracking-wider leading-tight">
+								<span className="font-black text-xs leading-tight tracking-wider">
 									ACADEMY
 								</span>
 							</div>
 						</Link>
 
-						<p className="max-w-sm text-xs sm:text-sm text-muted-foreground leading-relaxed">
+						<p className="max-w-sm text-muted-foreground text-xs leading-relaxed sm:text-sm">
 							Practical, battle-tested ecommerce education and operating
 							frameworks. Learn to validate products, build high-converting
 							Shopify stores, and scale Meta Ads profitably.
 						</p>
 
-						<div className="mt-1 flex items-center gap-2 text-xs font-medium text-muted-foreground">
-							<span className="inline-flex size-2 rounded-full bg-emerald-500 animate-pulse" />
+						<div className="mt-1 flex items-center gap-2 font-medium text-muted-foreground text-xs">
+							<span className="inline-flex size-2 animate-pulse rounded-full bg-emerald-500" />
 							<span>100% Free · No Credit Card Required</span>
 						</div>
 					</div>
 
 					{/* Navigation Links Column */}
 					<div className="flex flex-col gap-3 md:col-span-3">
-						<p className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+						<p className="font-mono font-semibold text-foreground text-xs uppercase tracking-wider">
 							Curriculum
 						</p>
-						<ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-muted-foreground">
+						<ul className="flex flex-col gap-2.5 text-muted-foreground text-xs sm:text-sm">
 							<li>
 								<Link
-									className="transition-colors hover:text-foreground inline-flex items-center gap-1"
+									className="inline-flex items-center gap-1 transition-colors hover:text-foreground"
 									href="/academy/courses/shopify-ecommerce"
 								>
 									Browse All Lessons
@@ -88,10 +88,10 @@ export function SiteFooter() {
 
 					{/* Programs & Platform Column */}
 					<div className="flex flex-col gap-3 md:col-span-3">
-						<p className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+						<p className="font-mono font-semibold text-foreground text-xs uppercase tracking-wider">
 							Programs &amp; Platform
 						</p>
-						<ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-muted-foreground">
+						<ul className="flex flex-col gap-2.5 text-muted-foreground text-xs sm:text-sm">
 							<li>
 								<Link
 									className="font-medium text-foreground transition-colors hover:text-primary"
@@ -125,10 +125,10 @@ export function SiteFooter() {
 
 					{/* Directives & Pillars Column */}
 					<div className="flex flex-col gap-3 md:col-span-2">
-						<p className="font-mono text-xs font-semibold uppercase tracking-wider text-foreground">
+						<p className="font-mono font-semibold text-foreground text-xs uppercase tracking-wider">
 							Core Directives
 						</p>
-						<ul className="flex flex-col gap-2 text-xs text-muted-foreground">
+						<ul className="flex flex-col gap-2 text-muted-foreground text-xs">
 							<li className="flex items-center gap-1.5">
 								<span className="size-1 rounded-full bg-purple-500" />
 								<span>Sell First, Buy Second</span>
@@ -150,7 +150,7 @@ export function SiteFooter() {
 				</div>
 
 				{/* Bottom Bar */}
-				<div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs text-muted-foreground sm:flex-row">
+				<div className="mt-12 flex flex-col items-center justify-between gap-4 border-border/60 border-t pt-8 text-muted-foreground text-xs sm:flex-row">
 					<p>
 						© {new Date().getFullYear()} Edgecoms Academy. All rights reserved.
 					</p>

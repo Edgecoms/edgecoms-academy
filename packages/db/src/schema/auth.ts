@@ -22,6 +22,9 @@ export const user = pgTable("user", {
 		.defaultNow()
 		.$onUpdate(() => /* @__PURE__ */ new Date())
 		.notNull(),
+	// Stamped once the onboarding email is accepted by the transport. Null means
+	// it was never sent, which is what the backfill script selects on.
+	welcomeEmailSentAt: timestamp("welcome_email_sent_at"),
 });
 
 export const session = pgTable(

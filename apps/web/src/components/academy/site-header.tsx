@@ -1,6 +1,6 @@
-import { ModeToggle } from "@/components/mode-toggle";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export function SiteHeader() {
 	return (
@@ -11,20 +11,20 @@ export function SiteHeader() {
 					className="group flex items-center transition-transform hover:scale-[1.02]"
 					href="/academy"
 				>
-					<div className="relative flex flex-col items-start border-2 border-foreground px-2.5 py-1 text-foreground font-mono font-black uppercase leading-none tracking-tighter">
-						<span className="text-[10px] font-extrabold tracking-widest leading-tight">
+					<div className="relative flex flex-col items-start border-2 border-foreground px-2.5 py-1 font-black font-mono text-foreground uppercase leading-none tracking-tighter">
+						<span className="font-extrabold text-[10px] leading-tight tracking-widest">
 							EDGECOMS
 						</span>
-						<span className="text-xs font-black tracking-wider leading-tight">
+						<span className="font-black text-xs leading-tight tracking-wider">
 							ACADEMY
 						</span>
 					</div>
 				</Link>
 
 				{/* Center: Navigation Links */}
-				<nav className="hidden md:flex items-center gap-7 text-sm font-medium">
+				<nav className="hidden items-center gap-7 font-medium text-sm md:flex">
 					<Link
-						className="text-foreground font-semibold underline decoration-2 decoration-purple-600 underline-offset-8 transition-colors"
+						className="font-semibold text-foreground underline decoration-2 decoration-purple-600 underline-offset-8 transition-colors"
 						href="/academy"
 					>
 						Home
@@ -65,7 +65,7 @@ export function SiteHeader() {
 				<div className="flex items-center gap-3">
 					<ModeToggle />
 					<Link
-						className="inline-flex items-center gap-2 rounded-xl bg-[#281347] hover:bg-[#361960] text-white px-5 py-2 text-xs sm:text-sm font-semibold shadow-md transition-all hover:scale-[1.02] active:scale-[0.99]"
+						className="inline-flex items-center gap-2 rounded-xl bg-[#281347] px-5 py-2 font-semibold text-white text-xs shadow-md transition-all hover:scale-[1.02] hover:bg-[#361960] active:scale-[0.99] sm:text-sm"
 						href="/academy/access"
 					>
 						<span>Apply Now</span>

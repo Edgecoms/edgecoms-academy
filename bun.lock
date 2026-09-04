@@ -61,6 +61,7 @@
         "@edgecoms-academy/env": "workspace:*",
         "better-auth": "catalog:",
         "dotenv": "catalog:",
+        "drizzle-orm": "^0.45.2",
         "nodemailer": "^7.0.9",
         "zod": "catalog:",
       },
