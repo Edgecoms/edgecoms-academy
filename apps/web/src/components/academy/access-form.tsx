@@ -3,16 +3,45 @@
 import { Button } from "@edgecoms-academy/ui/components/button";
 import { Input } from "@edgecoms-academy/ui/components/input";
 import { Label } from "@edgecoms-academy/ui/components/label";
+import { PhoneInput } from "@edgecoms-academy/ui/components/phone-input";
+import { AsYouType, getExampleNumber } from "libphonenumber-js/min";
+import examples from "libphonenumber-js/mobile/examples";
 import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useActionState, useCallback, useEffect, useState } from "react";
+import {
+	useActionState,
+	useCallback,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
+import { type Country, isValidPhoneNumber } from "react-phone-number-input";
 
 import { authClient } from "@/lib/auth-client";
 import { trackEvent } from "@/lib/meta-pixel";
 
 const RESEND_COOLDOWN_SECONDS = 45;
 const CODE_LENGTH = 6;
-const MIN_PHONE_DIGITS = 8;
+const DEFAULT_PHONE_COUNTRY: Country = "IN";
+const HAS_SEPARATOR = /\D/;
+
+/** A real example number for the picked country, shaped the way this field types it. */
+function phonePlaceholder(country: Country) {
+	const example = getExampleNumber(country, examples);
+	if (!example) {
+		return "";
+	}
+	// Some countries group without their trunk prefix (India), others only group
+	// once it is there (United Kingdom).
+	const withoutTrunkPrefix = new AsYouType(country).input(
+		example.nationalNumber
+	);
+	return HAS_SEPARATOR.test(withoutTrunkPrefix)
+		? withoutTrunkPrefix
+		: example.formatNational();
+}
+const INVALID_PHONE_MESSAGE =
+	"Enter a valid phone number for the country you picked.";
 
 interface Requested {
 	email: string;
@@ -35,11 +64,23 @@ function EmailStep({
 }: {
 	onRequested: (requested: Requested) => void;
 }) {
+	const [phone, setPhone] = useState("");
+	const [country, setCountry] = useState<Country>(DEFAULT_PHONE_COUNTRY);
+	const placeholder = useMemo(() => phonePlaceholder(country), [country]);
+	const handleCountryChange = useCallback((next?: Country) => {
+		setCountry(next ?? DEFAULT_PHONE_COUNTRY);
+	}, []);
+	const phoneTyped = phone.length > 0;
+	const phoneValid = phoneTyped && isValidPhoneNumber(phone);
+
 	const [error, submit, pending] = useActionState(
 		async (_: string | null, form: FormData) => {
 			const email = String(form.get("email")).trim().toLowerCase();
 			const name = String(form.get("name")).trim();
-			const phone = String(form.get("phone")).trim();
+
+			if (!phoneValid) {
+				return INVALID_PHONE_MESSAGE;
+			}
 
 			const { error: sendError } =
 				await authClient.emailOtp.sendVerificationOtp({
@@ -100,18 +141,22 @@ function EmailStep({
 				</Field>
 
 				<Field htmlFor="phone" label="Phone number">
-					<Input
+					<PhoneInput
+						aria-invalid={phoneTyped && !phoneValid}
 						autoComplete="tel"
-						className="h-10 text-sm"
+						className="[&_button]:h-10 [&_input]:h-10 [&_input]:text-sm"
+						defaultCountry={DEFAULT_PHONE_COUNTRY}
 						disabled={pending}
 						id="phone"
-						inputMode="tel"
-						minLength={MIN_PHONE_DIGITS}
-						name="phone"
-						placeholder="+1 (555) 234-5678"
+						onChange={setPhone}
+						onCountryChange={handleCountryChange}
+						placeholder={placeholder}
 						required
-						type="tel"
+						value={phone}
 					/>
+					{phoneTyped && !phoneValid ? (
+						<p className="text-destructive text-xs">{INVALID_PHONE_MESSAGE}</p>
+					) : null}
 				</Field>
 			</div>
 

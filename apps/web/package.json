@@ -20,11 +20,13 @@
     "better-auth": "catalog:",
     "dotenv": "catalog:",
     "drizzle-orm": "^0.45.2",
+    "libphonenumber-js": "^1.13.12",
     "lucide-react": "catalog:",
     "next": "catalog:",
     "next-themes": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "react-phone-number-input": "^3.4.18",
     "sonner": "catalog:",
     "zod": "catalog:"
   },
