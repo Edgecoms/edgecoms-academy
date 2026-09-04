@@ -84,6 +84,27 @@ const query = db
 const targets = await (limit > 0 ? query.limit(limit) : query);
 const courseUrl = welcomeCourseUrl();
 
+// SKIP_ENV_VALIDATION bypasses zod, and with it the schema defaults, so these
+// can arrive undefined and bake "undefined" into every email that goes out.
+const missing = (
+	[
+		["EMAIL_FROM", env.EMAIL_FROM],
+		["SUPPORT_EMAIL", env.SUPPORT_EMAIL],
+		["WHATSAPP_COMMUNITY_URL", env.WHATSAPP_COMMUNITY_URL],
+	] as const
+)
+	.filter(([, value]) => !value)
+	.map(([name]) => name);
+
+if (missing.length > 0) {
+	process.stderr.write(
+		`Refusing to run: ${missing.join(", ")} resolved to nothing.\n` +
+			"These have schema defaults, so this usually means SKIP_ENV_VALIDATION is\n" +
+			"set, which skips the defaults too. Unset it and supply a real env file.\n"
+	);
+	process.exit(1);
+}
+
 process.stdout.write(
 	[
 		"",
@@ -91,6 +112,7 @@ process.stdout.write(
 		`  transport  ${transport}`,
 		`  from       ${env.EMAIL_FROM}`,
 		`  links to   ${courseUrl}`,
+		`  community  ${env.WHATSAPP_COMMUNITY_URL}`,
 		onlyEmail ? `  filter     ${onlyEmail}` : null,
 		limit > 0 ? `  limit      ${limit}` : null,
 		`  targeting  ${targets.length} user(s) with no welcome email on record`,
